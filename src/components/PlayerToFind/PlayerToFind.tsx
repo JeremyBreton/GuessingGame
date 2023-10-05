@@ -1,3 +1,4 @@
+import { useAppSelector } from '../../../src/hooks/redux';
 import './PlayerToFind.scss';
 
 type PlayerToFindProps = {
@@ -13,44 +14,42 @@ type PlayerToFindProps = {
     jersey: number;
     height: number;
     teams: string;
-  }[];
+  };
 };
 
 function PlayerToFind({ players }: PlayerToFindProps) {
-  const PlayerToFind = players.find(
-    (player) => (player.player = 'Aaron Gordon')
-  );
+  const selectedPlayer = useAppSelector((state) => state.form.selectedPlayers);
   // console.log(PlayerToFind);
 
   return (
     <div className="PlayerToFind-container">
       <article className="PlayerToFind-container__card">
         <div className="PlayerToFind-container__card-span">
-          NOM : {PlayerToFind?.player}
+          NOM : {selectedPlayer.player}
         </div>
         <div className="PlayerToFind-container__card-span">
-          TEAM : {PlayerToFind?.team}
+          TEAM : {selectedPlayer.team}
         </div>
         <div className="PlayerToFind-container__card-span">
-          CONF : {PlayerToFind?.conference}
+          CONF : {selectedPlayer.conference}
         </div>
         <div className="PlayerToFind-container__card-span">
-          DIV : {PlayerToFind?.division}
+          DIV : {selectedPlayer.division}
         </div>
         <div className="PlayerToFind-container__card-span">
-          POS : {PlayerToFind?.position}
+          POS : {selectedPlayer.position}
         </div>
         <div className="PlayerToFind-container__card-span">
-          TAILLE : {PlayerToFind?.height * 2.54}
+          TAILLE : {selectedPlayer.height * 2.54}
         </div>
         <div className="PlayerToFind-container__card-span">
-          AGE : {PlayerToFind?.age}
+          AGE : {selectedPlayer.age}
         </div>
         <div className="PlayerToFind-container__card-span">
-          # : {PlayerToFind?.jersey}
+          # : {selectedPlayer.jersey}
         </div>
         <div className="PlayerToFind-container__card-span">
-          TEAMS : {PlayerToFind?.teams}
+          TEAMS : {selectedPlayer.teams}
         </div>
       </article>
     </div>

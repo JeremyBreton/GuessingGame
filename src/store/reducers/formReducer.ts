@@ -5,6 +5,7 @@ type FormState = {
   messages: typeof players;
   currentMessage: string;
   filteredPlayers: [];
+  selectedPlayers: {};
 };
 
 const initialState: FormState = {
@@ -38,20 +39,27 @@ const initialState: FormState = {
   ],
   currentMessage: '',
   filteredPlayers: [],
+  selectedPlayers: {},
 };
 
 // Actions
 export const changeCurrentMessage = createAction<string>(
   'form/change-current-message'
 );
+export const selectPlayer = createAction('form/select-player');
 
 const FormReducer = createReducer(initialState, (builder) => {
-  builder.addCase(changeCurrentMessage, (state, action) => {
-    state.currentMessage = action.payload;
-    state.filteredPlayers = players.filter((player) =>
-      player.player.toLowerCase().includes(action.payload.toLowerCase())
-    );
-  });
+  builder
+    .addCase(changeCurrentMessage, (state, action) => {
+      state.currentMessage = action.payload;
+      state.filteredPlayers = players.filter((player) =>
+        player.player.toLowerCase().includes(action.payload.toLowerCase())
+      );
+    })
+
+    .addCase(selectPlayer, (state, action) => {
+      state.selectedPlayers = action.payload;
+    });
   // .addCase(addMessage, (state) => {
   //   // je veux ajouter un message à mon tableau de messages
   //   const newMessage: Message = {

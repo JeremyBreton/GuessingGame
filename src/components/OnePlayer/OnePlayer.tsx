@@ -1,7 +1,7 @@
 import './OnePlayer.scss';
 
 type OnePlayerProps = {
-  players: {
+  playersGuessed: {
     player: string;
     playerId: number;
     team: string;
@@ -16,9 +16,9 @@ type OnePlayerProps = {
   }[];
 };
 
-function OnePlayer({ players }: OnePlayerProps) {
-  const PlayerToFind = players.find(
-    (player) => (player.player = 'Aaron Gordon')
+function OnePlayer({ playersGuessed }: OnePlayerProps) {
+  const PlayerToFind = playersGuessed.find(
+    (player) => player.player === 'Anthony Davis'
   );
   console.log(PlayerToFind);
 
