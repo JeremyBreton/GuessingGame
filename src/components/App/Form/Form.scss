@@ -1,0 +1,33 @@
+@use '../../../styles/variables' as v;
+
+.form {
+  width: 90%;
+  margin: v.$gutter auto;
+  display: flex;
+  flex-wrap: wrap;
+  background: v.$color-bg-darkest;
+  border-radius: v.$gutter/2;
+  padding: v.$gutter * 2;
+  line-height: v.$gutter * 2;
+
+  &-input {
+    width: 100%;
+    padding-left: v.$gutter;
+  }
+  &-results {
+    width: 100%;
+    height: 150px;
+    overflow-y: scroll;
+    margin: v.$gutter auto;
+    list-style-type: none;
+
+    &-li {
+      border: 1px solid v.$color-bg-darkest;
+      background: v.$color;
+      color: v.$color-bg-darkest;
+      padding: v.$gutter/4;
+      text-align: left;
+      padding-left: v.$gutter;
+    }
+  }
+}

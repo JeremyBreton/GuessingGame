@@ -1,0 +1,28 @@
+@use '../../styles/variables' as v;
+
+.OnePlayer-container {
+  width: 90%;
+
+  margin: auto;
+  background: v.$color-bg-dark;
+  border-radius: v.$gutter/2;
+  padding: v.$gutter;
+  overflow-y: scroll;
+
+  &__card {
+    width: 100%;
+    margin: v.$gutter auto;
+    background: v.$color-bg-light;
+    border-radius: v.$gutter/2;
+    padding: v.$gutter;
+    display: flex;
+
+    &-span {
+      flex-grow: 1;
+      background: v.$color-bg-darkest;
+      padding: v.$gutter;
+      border-radius: v.$gutter/2;
+      margin: v.$gutter/10;
+    }
+  }
+}

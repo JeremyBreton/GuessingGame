@@ -1,0 +1,21 @@
+@use '../../../styles/variables' as v;
+
+.listPlayers-container {
+  width: 90%;
+  height: 300px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  background: v.$color-bg-dark;
+  border-radius: v.$gutter/2;
+  padding: v.$gutter;
+  overflow-y: scroll;
+
+  &__card {
+    width: 15%;
+    margin: v.$gutter auto;
+    background: v.$color-bg-light;
+    border-radius: v.$gutter/2;
+    padding: v.$gutter;
+  }
+}

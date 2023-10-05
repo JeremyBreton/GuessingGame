@@ -1,3 +1,10 @@
+@use 'sass:color';
+
 $color: #fff;
 $color-primary: #61dafb;
 $color-bg: #282c34;
+$color-bg-light: color.scale($color-bg, $lightness: 10%);
+$color-bg-dark: color.scale($color-bg, $lightness: -20%);
+$color-bg-darkest: color.scale($color-bg, $lightness: -40%);
+
+$gutter: 1rem;
