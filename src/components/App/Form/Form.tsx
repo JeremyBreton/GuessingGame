@@ -48,7 +48,7 @@ function Form({ players }: FormProps) {
   function handleClick(event: MouseEvent<HTMLLIElement, MouseEvent>): void {
     console.log('je click sur un résultat');
     // je veux modifier la valeur de `currentMessage` dans mon state Redux
-    // avec la saisie utilisateur
+    // avec la saisie utilisateur.
   }
 
   return (
