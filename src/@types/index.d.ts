@@ -1,4 +1,5 @@
 export interface PlayerType {
+  isWinning: any;
   player: string;
   playerId: number;
   team: string;

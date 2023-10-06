@@ -42,6 +42,8 @@ const initialState: FormState = {
     height: 74,
     teams: 'GSW',
     isWinning: false,
+    isGood: false,
+    isNear: false,
   },
 };
 
@@ -65,6 +67,8 @@ const FormReducer = createReducer(initialState, (builder) => {
     height: 74,
     teams: 'GSW',
     isWinning: false,
+    isGood: false,
+    isNear: false,
   };
 
   builder
@@ -79,6 +83,13 @@ const FormReducer = createReducer(initialState, (builder) => {
       state.selectedPlayers.push({
         ...action.payload,
         isWinning: action.payload.player === playertoWin.player,
+        isGood: action.payload.conference === playertoWin.conference,
+        isGood: action.payload.division === playertoWin.division,
+        isGood: action.payload.position.includes(playertoWin.position),
+        isGood: action.payload.team.includes(playertoWin.team),
+        // isNear: action.payload.teams.includes(playertoWin.teams),
+        isNear: Math.abs(action.payload.height - playertoWin.height) <= 1,
+        isNear: Math.abs(action.payload.jersey - playertoWin.jersey) <= 1,
       });
 
       console.log('LOG DE action.payload', action.payload);

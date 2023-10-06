@@ -6315,7 +6315,7 @@ export default [
     position: 'C',
     jersey: 0,
     height: 84,
-    teams: 'PHI.DAL.GSW.SAC',
+    teams: 'PHI.DAL.wSAC',
   },
   {
     player: 'Willy Hernangomez',

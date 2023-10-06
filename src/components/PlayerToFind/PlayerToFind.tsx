@@ -16,6 +16,7 @@ type PlayerToFindProps = {
     height: number;
     teams: string;
     isWinning: boolean;
+    isGood: boolean;
   };
   selectedPlayers: PlayerType[];
 };
@@ -38,37 +39,42 @@ function PlayerToFind({ players, selectedPlayers }: PlayerToFindProps) {
             NOM : {item.player}
           </div>
           <div
-            className={`PlayerToFind-container__card-span team ${
-              item.isWinning ? 'win' : ''
-            }`}
+            className={`PlayerToFind-container__card-span conference 
+            ${item.isGood ? 'good' : ''}
+            ${item.isNear ? 'near' : ''}
+            ${item.isWinning ? 'win' : ''}
+            `}
           >
             TEAM : {item.team} // OLD : {item.teams}
           </div>
           <div
-            className={`PlayerToFind-container__card-span conf ${
-              item.isWinning ? 'win' : ''
-            }`}
+            className={`PlayerToFind-container__card-span conference 
+            ${item.isGood ? 'good' : ''}
+            ${item.isWinning ? 'win' : ''}
+              `}
           >
             CONF : {item.conference}
           </div>
           <div
             className={`PlayerToFind-container__card-span division ${
               item.isWinning ? 'win' : ''
-            }`}
+            } ${item.isGood ? 'good' : ''}`}
           >
             DIV : {item.division}
           </div>
           <div
             className={`PlayerToFind-container__card-span position ${
               item.isWinning ? 'win' : ''
-            }`}
+            } ${item.isGood ? 'good' : ''}`}
           >
             POS : {item.position}
           </div>
           <div
-            className={`PlayerToFind-container__card-span height ${
-              item.isWinning ? 'win' : ''
-            }`}
+            className={`PlayerToFind-container__card-span height 
+            ${item.isGood ? 'good' : ''}
+            ${item.isNear ? 'near' : ''}
+            ${item.isWinning ? 'win' : ''}
+            `}
           >
             TAILLE : {item.height * 2.54}
           </div>
@@ -80,9 +86,11 @@ function PlayerToFind({ players, selectedPlayers }: PlayerToFindProps) {
             AGE : {item.age}
           </div>
           <div
-            className={`PlayerToFind-container__card-span jersey ${
-              item.isWinning ? 'win' : ''
-            }`}
+            className={`PlayerToFind-container__card-span jersey 
+            ${item.isGood ? 'good' : ''}
+            ${item.isNear ? 'near' : ''}
+            ${item.isWinning ? 'win' : ''}
+            `}
           >
             # : {item.jersey}
           </div>
