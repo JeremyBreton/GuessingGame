@@ -1,5 +1,5 @@
-import { useAppSelector } from '../../../src/hooks/redux';
-import { PlayerType } from '../../@types';
+import { useAppSelector } from '../../../hooks/redux';
+import { PlayerType } from '../../../@types';
 import './PlayerToFind.scss';
 
 type PlayerToFindProps = {

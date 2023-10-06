@@ -104,13 +104,14 @@ const FormReducer = createReducer(initialState, (builder) => {
         isGoodAge: action.payload.age === playertoWin.age,
         isNearAge: Math.abs(action.payload.age - playertoWin.age) <= 1,
       });
+      state.currentMessage = '';
 
       console.log('LOG DE action.payload', action.payload);
       console.log('LOG DE playertoWin', playertoWin);
 
       if (action.payload.player === playertoWin.player) {
         playertoWin.isWinning = true; // Marquez le joueur gagnant
-        alert(`YOU WIN, THE PLAYER IS ${playertoWin.player}`);
+        alert(`YOU WIN, THE RIGHT ANSWER IS ${playertoWin.player}`);
       }
     });
 });

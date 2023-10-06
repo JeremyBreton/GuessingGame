@@ -18,10 +18,11 @@
   }
   &-results {
     width: 50%;
-    height: 150px;
+    height: 10rem;
     overflow-y: scroll;
     margin: auto;
     list-style-type: none;
+    z-index: 1;
 
     &-li {
       border: 1px solid v.$color-bg-darkest;

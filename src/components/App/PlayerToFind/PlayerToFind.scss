@@ -1,4 +1,4 @@
-@use '../../styles/variables' as v;
+@use '../../../styles/variables' as v;
 
 .PlayerToFind-container {
   width: 90%;
@@ -6,6 +6,8 @@
   background: v.$color-bg-light;
   border-radius: v.$gutter/2;
   padding: v.$gutter;
+  overflow-y: scroll;
+  height: 25rem;
 
   &__card {
     width: 100%;

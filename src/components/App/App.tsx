@@ -1,11 +1,11 @@
 import playersData from '../../data/players';
 
-import OnePlayer from '../OnePlayer/OnePlayer';
+import OnePlayer from './OnePlayer/OnePlayer';
 import ListPlayers from './ListPlayers/ListPlayers';
 import './App.scss';
 import Header from './Header/Header';
 import Form from './Form/Form';
-import PlayerToFind from '../PlayerToFind/PlayerToFind';
+import PlayerToFind from './PlayerToFind/PlayerToFind';
 
 function App() {
   return (
