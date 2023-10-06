@@ -22,14 +22,18 @@
       padding: v.$gutter;
       border-radius: v.$gutter/2;
       margin: v.$gutter/10;
-
-      &-win {
-        background: green;
-      }
-
-      &-near {
-        background: orange;
-      }
     }
   }
+}
+
+.win {
+  background: green;
+}
+
+.near {
+  background: orange;
+}
+
+.good {
+  background: blue;
 }

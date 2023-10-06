@@ -41,6 +41,7 @@ const initialState: FormState = {
     jersey: 30,
     height: 74,
     teams: 'GSW',
+    isWinning: false,
   },
 };
 
@@ -63,6 +64,7 @@ const FormReducer = createReducer(initialState, (builder) => {
     jersey: 30,
     height: 74,
     teams: 'GSW',
+    isWinning: false,
   };
 
   builder
@@ -74,12 +76,16 @@ const FormReducer = createReducer(initialState, (builder) => {
     })
 
     .addCase(selectPlayer, (state, action) => {
-      state.selectedPlayers.push(action.payload);
+      state.selectedPlayers.push({
+        ...action.payload,
+        isWinning: action.payload.player === playertoWin.player,
+      });
 
       console.log('LOG DE action.payload', action.payload);
       console.log('LOG DE playertoWin', playertoWin);
 
       if (action.payload.player === playertoWin.player) {
+        playertoWin.isWinning = true; // Marquez le joueur gagnant
         alert(`YOU WIN, THE PLAYER IS ${playertoWin.player}`);
       }
     });
