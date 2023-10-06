@@ -82,14 +82,27 @@ const FormReducer = createReducer(initialState, (builder) => {
     .addCase(selectPlayer, (state, action) => {
       state.selectedPlayers.push({
         ...action.payload,
+        // WIN
         isWinning: action.payload.player === playertoWin.player,
-        isGood: action.payload.conference === playertoWin.conference,
-        isGood: action.payload.division === playertoWin.division,
-        isGood: action.payload.position.includes(playertoWin.position),
-        isGood: action.payload.team.includes(playertoWin.team),
-        // isNear: action.payload.teams.includes(playertoWin.teams),
-        isNear: Math.abs(action.payload.height - playertoWin.height) <= 1,
-        isNear: Math.abs(action.payload.jersey - playertoWin.jersey) <= 1,
+        // CONFERENCE
+        isGoodConference: action.payload.conference === playertoWin.conference,
+        // DIVISION
+        isGoodDivision: action.payload.division === playertoWin.division,
+        // POSITION
+        isGoodPosition: action.payload.position === playertoWin.position,
+        isNearPosition: action.payload.position.includes(playertoWin.position),
+        // TEAM
+        isGoodTeam: action.payload.team.includes(playertoWin.team),
+        isNearTeam: action.payload.teams.includes(playertoWin.teams),
+        // HEIGHT
+        isGoodHeight: action.payload.height === playertoWin.height,
+        isNearHeight: Math.abs(action.payload.height - playertoWin.height) <= 1,
+        // JERSEY
+        isGoodJersey: action.payload.jersey === playertoWin.jersey,
+        isNearJersey: Math.abs(action.payload.jersey - playertoWin.jersey) <= 1,
+        // AGE
+        isGoodAge: action.payload.age === playertoWin.age,
+        isNearAge: Math.abs(action.payload.age - playertoWin.age) <= 1,
       });
 
       console.log('LOG DE action.payload', action.payload);

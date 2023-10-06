@@ -40,11 +40,16 @@ function Form({ players }: FormProps) {
     // console.log('Player', selectedPlayer);
   }
 
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+  }
+
   return (
     <div>
-      <div>Texte tapé et récupéré : {currentMessage}</div>
-      <p>Nb joueurs filtrés : {filteredPlayers.length}</p>
-      <form className="form">
+      {/* <div>Texte tapé et récupéré : {currentMessage}</div>
+      <p>Nb joueurs filtrés : {filteredPlayers.length}</p> */}
+      <p>Base de données : 2021</p>
+      <form className="form" onSubmit={handleSubmit}>
         <input
           type="select"
           className="form-input"

@@ -11,4 +11,7 @@ export interface PlayerType {
   jersey: number;
   height: number;
   teams: string;
+  isGood: Boolean;
+  isWinning: Boolean;
+  isNear: Boolean;
 }

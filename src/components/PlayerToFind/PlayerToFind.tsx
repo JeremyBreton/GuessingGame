@@ -29,70 +29,92 @@ function PlayerToFind({ players, selectedPlayers }: PlayerToFindProps) {
 
   return (
     <div className="PlayerToFind-container">
+      <article className="PlayerToFind-container__card">
+        <div className="PlayerToFind-container__card-div player">NOM</div>
+        <div className="PlayerToFind-container__card-div team">TEAM</div>
+        <div className="PlayerToFind-container__card-div conference">
+          CONFERENCE
+        </div>
+        <div className="PlayerToFind-container__card-div division">
+          DIVISION
+        </div>
+        <div className="PlayerToFind-container__card-div position">
+          POSITION
+        </div>
+        <div className="PlayerToFind-container__card-div taille">TAILLE</div>
+        <div className="PlayerToFind-container__card-div age">AGE</div>
+        <div className="PlayerToFind-container__card-div numero">NUMERO</div>
+      </article>
+
       {selectedPlayer.map((item) => (
         <article key={item.playerId} className="PlayerToFind-container__card">
           <div
-            className={`PlayerToFind-container__card-span player ${
+            className={`PlayerToFind-container__card-div player ${
               item.isWinning ? 'win' : ''
             }`}
           >
-            NOM : {item.player}
+            {item.player}
           </div>
           <div
-            className={`PlayerToFind-container__card-span conference 
-            ${item.isGood ? 'good' : ''}
-            ${item.isNear ? 'near' : ''}
+            className={`PlayerToFind-container__card-div team 
+            ${item.isGoodTeam ? 'good' : ''}
+            ${item.isNearTeam ? 'near' : ''}
             ${item.isWinning ? 'win' : ''}
             `}
           >
-            TEAM : {item.team} // OLD : {item.teams}
+            {item.team}
           </div>
           <div
-            className={`PlayerToFind-container__card-span conference 
-            ${item.isGood ? 'good' : ''}
+            className={`PlayerToFind-container__card-div conference 
+            ${item.isGoodConference ? 'good' : ''}
             ${item.isWinning ? 'win' : ''}
               `}
           >
-            CONF : {item.conference}
+            {item.conference}
           </div>
           <div
-            className={`PlayerToFind-container__card-span division ${
-              item.isWinning ? 'win' : ''
-            } ${item.isGood ? 'good' : ''}`}
-          >
-            DIV : {item.division}
-          </div>
-          <div
-            className={`PlayerToFind-container__card-span position ${
-              item.isWinning ? 'win' : ''
-            } ${item.isGood ? 'good' : ''}`}
-          >
-            POS : {item.position}
-          </div>
-          <div
-            className={`PlayerToFind-container__card-span height 
-            ${item.isGood ? 'good' : ''}
-            ${item.isNear ? 'near' : ''}
+            className={`PlayerToFind-container__card-div division
+            ${item.isGoodDivision ? 'good' : ''}
             ${item.isWinning ? 'win' : ''}
             `}
           >
-            TAILLE : {item.height * 2.54}
+            {item.division}
           </div>
           <div
-            className={`PlayerToFind-container__card-span age ${
-              item.isWinning ? 'win' : ''
-            }`}
-          >
-            AGE : {item.age}
-          </div>
-          <div
-            className={`PlayerToFind-container__card-span jersey 
-            ${item.isGood ? 'good' : ''}
-            ${item.isNear ? 'near' : ''}
+            className={`PlayerToFind-container__card-div position
+            ${item.isGoodPosition ? 'good' : ''}
+            ${item.isNearPosition ? 'near' : ''}
             ${item.isWinning ? 'win' : ''}
             `}
           >
-            # : {item.jersey}
+            {item.position}
+          </div>
+          <div
+            className={`PlayerToFind-container__card-div height 
+            ${item.isGoodHeight ? 'good' : ''}
+            ${item.isNearHeight ? 'near' : ''}
+            ${item.isWinning ? 'win' : ''}
+            `}
+          >
+            {((item.height * 2.54) / 100).toFixed(2)}
+          </div>
+          <div
+            className={`PlayerToFind-container__card-div age 
+            ${item.isGoodAge ? 'good' : ''}
+            ${item.isNearAge ? 'near' : ''}
+            ${item.isWinning ? 'win' : ''}
+            `}
+          >
+            {item.age}
+          </div>
+          <div
+            className={`PlayerToFind-container__card-div jersey 
+            ${item.isGoodJersey ? 'good' : ''}
+            ${item.isNearJersey ? 'near' : ''}
+            ${item.isWinning ? 'win' : ''}
+            `}
+          >
+            {item.jersey}
           </div>
         </article>
       ))}

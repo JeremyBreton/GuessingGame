@@ -3,19 +3,24 @@
 .PlayerToFind-container {
   width: 90%;
   margin: auto;
-  background: v.$color-bg-dark;
+  background: v.$color-bg-light;
   border-radius: v.$gutter/2;
   padding: v.$gutter;
 
   &__card {
     width: 100%;
-    margin: v.$gutter auto;
-    background: v.$color-bg-light;
+    margin: v.$gutter/2 auto;
+    // background: v.$color-bg-light;
     border-radius: v.$gutter/2;
-    padding: v.$gutter;
+    padding: v.$gutter/2;
     display: flex;
+    margin: 0;
 
-    &-span {
+    &-div {
+      &:first-child {
+        flex: 20%;
+        width: 20%;
+      }
       // flex-grow: 1;
       width: 12%;
       background: v.$color-bg-darkest;
@@ -30,8 +35,9 @@
   background: orange;
 }
 .good {
-  background: blue;
+  background: green;
 }
 .win {
   background: green;
+  border: 2px solid #fafafa;
 }
