@@ -29,28 +29,28 @@ function PlayerToFind({ players, selectedPlayers }: PlayerToFindProps) {
     <div className="PlayerToFind-container">
       {selectedPlayer.map((item) => (
         <article key={item.playerId} className="PlayerToFind-container__card">
-          <div className="PlayerToFind-container__card-span">
+          <div className="PlayerToFind-container__card-span player">
             NOM : {item.player}
           </div>
-          <div className="PlayerToFind-container__card-span">
+          <div className="PlayerToFind-container__card-span team">
             TEAM : {item.team} // OLD : {item.teams}
           </div>
-          <div className="PlayerToFind-container__card-span">
+          <div className="PlayerToFind-container__card-span conf">
             CONF : {item.conference}
           </div>
-          <div className="PlayerToFind-container__card-span">
+          <div className="PlayerToFind-container__card-span division">
             DIV : {item.division}
           </div>
-          <div className="PlayerToFind-container__card-span">
+          <div className="PlayerToFind-container__card-span position">
             POS : {item.position}
           </div>
-          <div className="PlayerToFind-container__card-span">
-            TAILLE : {item.height * 2.54}cm
+          <div className="PlayerToFind-container__card-span height">
+            TAILLE : {item.height * 2.54}
           </div>
-          <div className="PlayerToFind-container__card-span">
+          <div className="PlayerToFind-container__card-span age">
             AGE : {item.age}
           </div>
-          <div className="PlayerToFind-container__card-span">
+          <div className="PlayerToFind-container__card-span jersey">
             # : {item.jersey}
           </div>
         </article>

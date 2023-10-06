@@ -7,6 +7,7 @@ type FormState = {
   currentMessage: string;
   filteredPlayers: PlayerType[];
   selectedPlayers: PlayerType[];
+  playertoWin: string;
 };
 
 const initialState: FormState = {
@@ -28,6 +29,19 @@ const initialState: FormState = {
   currentMessage: '',
   filteredPlayers: [],
   selectedPlayers: [],
+  playertoWin: {
+    player: 'Stephen Curry',
+    playerId: 201939,
+    team: 'GSW',
+    teamId: 1610612744,
+    conference: 'west',
+    division: 'pacific',
+    age: 33,
+    position: 'G',
+    jersey: 30,
+    height: 74,
+    teams: 'GSW',
+  },
 };
 
 // Actions
@@ -37,6 +51,20 @@ export const changeCurrentMessage = createAction<string>(
 export const selectPlayer = createAction<PlayerType>('form/select-player');
 
 const FormReducer = createReducer(initialState, (builder) => {
+  const playertoWin = {
+    player: 'Stephen Curry',
+    playerId: 201939,
+    team: 'GSW',
+    teamId: 1610612744,
+    conference: 'west',
+    division: 'pacific',
+    age: 33,
+    position: 'G',
+    jersey: 30,
+    height: 74,
+    teams: 'GSW',
+  };
+
   builder
     .addCase(changeCurrentMessage, (state, action) => {
       state.currentMessage = action.payload;
@@ -46,8 +74,14 @@ const FormReducer = createReducer(initialState, (builder) => {
     })
 
     .addCase(selectPlayer, (state, action) => {
-      // state.selectedPlayers = [action.payload];
       state.selectedPlayers.push(action.payload);
+
+      console.log('LOG DE action.payload', action.payload);
+      console.log('LOG DE playertoWin', playertoWin);
+
+      if (action.payload.player === playertoWin.player) {
+        alert(`YOU WIN, THE PLAYER IS ${playertoWin.player}`);
+      }
     });
 });
 
