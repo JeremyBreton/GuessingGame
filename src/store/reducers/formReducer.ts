@@ -1,15 +1,16 @@
 import { createReducer, createAction } from '@reduxjs/toolkit';
 import players from '../../data/players';
+import { PlayerType } from '../../@types';
 
 type FormState = {
-  messages: typeof players;
+  players: PlayerType[];
   currentMessage: string;
-  filteredPlayers: [];
-  selectedPlayers: {};
+  filteredPlayers: PlayerType[];
+  selectedPlayers: PlayerType[];
 };
 
 const initialState: FormState = {
-  messages: [
+  players: [
     {
       player: 'Aaron Gordon',
       playerId: 203932,
@@ -23,30 +24,17 @@ const initialState: FormState = {
       height: 80,
       teams: 'DEN.ORL',
     },
-    {
-      player: 'Aaron Holiday',
-      playerId: 1628988,
-      team: 'PHX',
-      teamId: 1610612756,
-      conference: 'west',
-      division: 'pacific',
-      age: 25,
-      position: 'G',
-      jersey: 4,
-      height: 72,
-      teams: 'PHX.WAS.IND',
-    },
   ],
   currentMessage: '',
   filteredPlayers: [],
-  selectedPlayers: {},
+  selectedPlayers: [],
 };
 
 // Actions
 export const changeCurrentMessage = createAction<string>(
   'form/change-current-message'
 );
-export const selectPlayer = createAction('form/select-player');
+export const selectPlayer = createAction<PlayerType>('form/select-player');
 
 const FormReducer = createReducer(initialState, (builder) => {
   builder
@@ -58,24 +46,9 @@ const FormReducer = createReducer(initialState, (builder) => {
     })
 
     .addCase(selectPlayer, (state, action) => {
-      state.selectedPlayers = action.payload;
+      // state.selectedPlayers = [action.payload];
+      state.selectedPlayers.push(action.payload);
     });
-  // .addCase(addMessage, (state) => {
-  //   // je veux ajouter un message à mon tableau de messages
-  //   const newMessage: Message = {
-  //     id: 4,
-  //     author: 'Super Chat',
-  //     content: state.currentMessage,
-  //   };
-  //   // avec ImmerJS, je peux utiliser des fonctions _mutator_
-  //   state.messages.push(newMessage);
-  //   state.currentMessage = '';
-  //   // sans ImmerJS c'est commme en dessous :
-  //   // return {
-  //   //   ...state,
-  //   // //   messages: [...state.messages, newMessage],
-  //   // };
-  // })
 });
 
 export default FormReducer;

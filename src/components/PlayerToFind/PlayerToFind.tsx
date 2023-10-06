@@ -1,4 +1,5 @@
 import { useAppSelector } from '../../../src/hooks/redux';
+import { PlayerType } from '../../@types';
 import './PlayerToFind.scss';
 
 type PlayerToFindProps = {
@@ -15,43 +16,45 @@ type PlayerToFindProps = {
     height: number;
     teams: string;
   };
+  selectedPlayers: PlayerType[];
 };
 
-function PlayerToFind({ players }: PlayerToFindProps) {
+function PlayerToFind({ players, selectedPlayers }: PlayerToFindProps) {
   const selectedPlayer = useAppSelector((state) => state.form.selectedPlayers);
   // console.log(PlayerToFind);
+  // console.log('LOG DE selectedPlayers', selectedPlayers); // undefined
+  console.log('LOG DE selectedPlayer', selectedPlayer);
 
   return (
     <div className="PlayerToFind-container">
-      <article className="PlayerToFind-container__card">
-        <div className="PlayerToFind-container__card-span">
-          NOM : {selectedPlayer.player}
-        </div>
-        <div className="PlayerToFind-container__card-span">
-          TEAM : {selectedPlayer.team}
-        </div>
-        <div className="PlayerToFind-container__card-span">
-          CONF : {selectedPlayer.conference}
-        </div>
-        <div className="PlayerToFind-container__card-span">
-          DIV : {selectedPlayer.division}
-        </div>
-        <div className="PlayerToFind-container__card-span">
-          POS : {selectedPlayer.position}
-        </div>
-        <div className="PlayerToFind-container__card-span">
-          TAILLE : {selectedPlayer.height * 2.54}
-        </div>
-        <div className="PlayerToFind-container__card-span">
-          AGE : {selectedPlayer.age}
-        </div>
-        <div className="PlayerToFind-container__card-span">
-          # : {selectedPlayer.jersey}
-        </div>
-        <div className="PlayerToFind-container__card-span">
-          TEAMS : {selectedPlayer.teams}
-        </div>
-      </article>
+      {selectedPlayer.map((item) => (
+        <article key={item.playerId} className="PlayerToFind-container__card">
+          <div className="PlayerToFind-container__card-span">
+            NOM : {item.player}
+          </div>
+          <div className="PlayerToFind-container__card-span">
+            TEAM : {item.team} // OLD : {item.teams}
+          </div>
+          <div className="PlayerToFind-container__card-span">
+            CONF : {item.conference}
+          </div>
+          <div className="PlayerToFind-container__card-span">
+            DIV : {item.division}
+          </div>
+          <div className="PlayerToFind-container__card-span">
+            POS : {item.position}
+          </div>
+          <div className="PlayerToFind-container__card-span">
+            TAILLE : {item.height * 2.54}cm
+          </div>
+          <div className="PlayerToFind-container__card-span">
+            AGE : {item.age}
+          </div>
+          <div className="PlayerToFind-container__card-span">
+            # : {item.jersey}
+          </div>
+        </article>
+      ))}
     </div>
   );
 }

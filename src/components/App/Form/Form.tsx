@@ -2,37 +2,16 @@ import { useDispatch } from 'react-redux';
 import { useAppSelector } from '../../../../src/hooks/redux';
 import './Form.scss';
 import {
+  addPlayer,
   changeCurrentMessage,
   selectPlayer,
 } from '../../../store/reducers/formReducer';
+import { PlayerType } from '../../../@types';
 
 type FormProps = {
-  players: {
-    player: string;
-    playerId: number;
-    team: string;
-    teamId: number;
-    conference: string;
-    division: string;
-    age: number;
-    position: string;
-    jersey: number;
-    height: number;
-    teams: string;
-  }[];
-  filteredPlayers: {
-    player: string;
-    playerId: number;
-    team: string;
-    teamId: number;
-    conference: string;
-    division: string;
-    age: number;
-    position: string;
-    jersey: number;
-    height: number;
-    teams: string;
-  }[];
+  players: PlayerType[];
+  filteredPlayers: PlayerType[];
+  selectedPlayers: PlayerType[];
 };
 
 function Form({ players }: FormProps) {
@@ -57,13 +36,14 @@ function Form({ players }: FormProps) {
     // je veux modifier la valeur de `selectPlayer` dans mon state Redux
     // avec le click de l'utilisateur.
     dispatch(selectPlayer(player));
+    // dispatch(addPlayer(selectedPlayer));
+    // console.log('Player', selectedPlayer);
   }
 
   return (
     <div>
       <div>Texte tapé et récupéré : {currentMessage}</div>
       <p>Nb joueurs filtrés : {filteredPlayers.length}</p>
-      <p>Joueur sélectionné :</p>
       <form className="form">
         <input
           type="select"
