@@ -86,9 +86,9 @@ const FormReducer = createReducer(initialState, (builder) => {
         ...action.payload,
         // WIN
         isWinning: action.payload.player === playertoWin.player,
-        // ! CONFERENCE = NE FONCTIONNE PAS
+        // CONFERENCE
         isGoodConference: action.payload.conference === playertoWin.conference,
-        // ! DIVISION = NE FONCTIONNE PAS
+        // DIVISION
         isGoodDivision: action.payload.division === playertoWin.division,
         // POSITION
         isGoodPosition: action.payload.position === playertoWin.position,
