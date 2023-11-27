@@ -6,6 +6,7 @@ import './App.scss';
 import Header from './Header/Header';
 import Form from './Form/Form';
 import PlayerToFind from './PlayerToFind/PlayerToFind';
+import Restart from './Restart/Restart';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Header />
       </header>
       <main>
+        <Restart />
         {/* <ListPlayers players={playersData} /> */}
         {/* <OnePlayer players={playersData} /> */}
         <Form />

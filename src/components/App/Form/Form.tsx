@@ -48,7 +48,6 @@ function Form({ players }: FormProps) {
     <div>
       {/* <div>Texte tapé et récupéré : {currentMessage}</div>
       <p>Nb joueurs filtrés : {filteredPlayers.length}</p> */}
-      <p>Base de données : 2021</p>
       <form className="form" onSubmit={handleSubmit}>
         <input
           type="select"

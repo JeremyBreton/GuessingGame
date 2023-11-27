@@ -23,9 +23,11 @@ type PlayerToFindProps = {
 
 function PlayerToFind({ players, selectedPlayers }: PlayerToFindProps) {
   const selectedPlayer = useAppSelector((state) => state.form.selectedPlayers);
+  const playerToWin = useAppSelector((state) => state.form.playertoWin);
   // console.log(PlayerToFind);
   // console.log('LOG DE selectedPlayers', selectedPlayers); // undefined
-  console.log('LOG DE selectedPlayer', selectedPlayer);
+  // console.log('LOG DE selectedPlayer dans PlayerToFind.tsx', selectedPlayer);
+  // console.log('LOG DE PLAYERTOWIN dans PlayerToFind.tsx', playerToWin);
 
   return (
     <div className="PlayerToFind-container">

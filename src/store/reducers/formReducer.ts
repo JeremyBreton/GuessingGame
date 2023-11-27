@@ -59,8 +59,8 @@ const FormReducer = createReducer(initialState, (builder) => {
     playerId: 201939,
     team: 'GSW',
     teamId: 1610612744,
-    conference: 'west',
-    division: 'pacific',
+    conference: 'West',
+    division: 'Pacific',
     age: 33,
     position: 'G',
     jersey: 30,
@@ -70,6 +70,8 @@ const FormReducer = createReducer(initialState, (builder) => {
     isGood: false,
     isNear: false,
   };
+
+  // const playertoWin = getRandomPlayer(players);
 
   builder
     .addCase(changeCurrentMessage, (state, action) => {
@@ -84,9 +86,9 @@ const FormReducer = createReducer(initialState, (builder) => {
         ...action.payload,
         // WIN
         isWinning: action.payload.player === playertoWin.player,
-        // CONFERENCE
+        // ! CONFERENCE = NE FONCTIONNE PAS
         isGoodConference: action.payload.conference === playertoWin.conference,
-        // DIVISION
+        // ! DIVISION = NE FONCTIONNE PAS
         isGoodDivision: action.payload.division === playertoWin.division,
         // POSITION
         isGoodPosition: action.payload.position === playertoWin.position,
