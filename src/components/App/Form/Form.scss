@@ -8,8 +8,9 @@
   flex-direction: column;
   // background: v.$color-bg-darkest;
   border-radius: v.$gutter/2;
-  padding: v.$gutter * 2;
+  // padding: v.$gutter * 2;
   line-height: v.$gutter * 2;
+  position: relative;
 
   &-input {
     width: 50%;
@@ -17,9 +18,21 @@
     padding-left: v.$gutter;
   }
   &-results {
+    // width: 50%;
+    // height: 10rem;
+    // overflow-y: scroll;
+    // margin: auto;
+    // list-style-type: none;
+    // z-index: 1;
+    position: absolute; /* Ajoutez cette ligne pour positionner l'élément absolument par rapport à son parent positionné (form) */
+    top: 100%; /* Ajoutez cette ligne pour placer l'élément en dessous de l'input */
+    left: 50%; /* Modifiez cette ligne pour centrer la liste des résultats sous l'input */
+    transform: translateX(
+      -50%
+    ); /* Ajoutez cette ligne pour ajuster la position horizontale */
     width: 50%;
-    height: 10rem;
-    overflow-y: scroll;
+    max-height: 12rem; /* Ajoutez cette ligne pour définir une hauteur maximale pour la liste déroulante */
+    overflow-y: auto; /* Ajoutez cette ligne pour ajouter une barre de défilement si nécessaire */
     margin: auto;
     list-style-type: none;
     z-index: 1;
