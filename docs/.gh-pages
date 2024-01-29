@@ -1,2 +1,3 @@
-# Créez un fichier nommé .gh-pages à la racine du projet
-touch .gh-pages
+# Créez un fichier nommé .gh-pages à l'intérieur du répertoire /docs
+
+touch docs/.gh-pages
