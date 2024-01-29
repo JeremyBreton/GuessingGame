@@ -1,3 +1,11 @@
-#restart {
-  border: 2px solid blueviolet;
+@use '../../../styles/variables' as v;
+
+#buttonRestart {
+  background-color: v.$color-primary;
+  margin-top: 1rem;
+  border: 2px solid v.$color;
+  border-radius: v.$gutter/2;
+  color: v.$color;
+  width: 25%;
+  height: 5rem;
 }

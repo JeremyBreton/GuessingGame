@@ -22,7 +22,7 @@ function Form({ players }: FormProps) {
   // console.log(selectedPlayer);
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-    console.log('je tape une lettre');
+    // console.log('je tape une lettre');
     // je veux modifier la valeur de `currentMessage` dans mon state Redux
     // avec la saisie utilisateur
     dispatch(changeCurrentMessage(event.target.value));
@@ -32,7 +32,7 @@ function Form({ players }: FormProps) {
     event: React.MouseEvent<HTMLLIElement, MouseEvent>,
     player: any
   ) {
-    console.log('je click sur un résultat');
+    // console.log('je click sur un résultat');
     // je veux modifier la valeur de `selectPlayer` dans mon state Redux
     // avec le click de l'utilisateur.
     dispatch(selectPlayer(player));
@@ -46,14 +46,13 @@ function Form({ players }: FormProps) {
 
   return (
     <div>
-      <h2>form.tsx</h2>
       {/* <div>Texte tapé et récupéré : {currentMessage}</div>
       <p>Nb joueurs filtrés : {filteredPlayers.length}</p> */}
       <form className="form" onSubmit={handleSubmit}>
         <input
           type="select"
           className="form-input"
-          placeholder="Saisissez un joueur…"
+          placeholder="Rechercher un joueur…"
           onChange={handleChange}
           value={currentMessage}
         />

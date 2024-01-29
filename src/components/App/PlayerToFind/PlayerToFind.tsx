@@ -1,6 +1,7 @@
 import { useAppSelector } from '../../../hooks/redux';
 import { PlayerType } from '../../../@types';
 import './PlayerToFind.scss';
+import { useState } from 'react';
 
 type PlayerToFindProps = {
   players: {
@@ -26,12 +27,12 @@ function PlayerToFind({ players, selectedPlayers }: PlayerToFindProps) {
   const playerToWin = useAppSelector((state) => state.form.playertoWin);
   // console.log(PlayerToFind);
   // console.log('LOG DE selectedPlayers', selectedPlayers); // undefined
-  console.log('LOG DE selectedPlayer dans PlayerToFind.tsx', selectedPlayer);
-  console.log('LOG DE PLAYERTOWIN dans PlayerToFind.tsx', playerToWin);
+  // console.log('LOG DE selectedPlayer dans PlayerToFind.tsx', selectedPlayer);
+  // console.log('LOG DE PLAYERTOWIN dans PlayerToFind.tsx', playerToWin);
 
   return (
     <div className="PlayerToFind-container">
-      <h2>playerToFind.tsx</h2>
+      <p>{selectedPlayer.length}/8 TENTATIVES</p>
       <article className="PlayerToFind-container__card">
         <div className="PlayerToFind-container__card-div player">NOM</div>
         <div className="PlayerToFind-container__card-div team">TEAM</div>
@@ -99,7 +100,7 @@ function PlayerToFind({ players, selectedPlayers }: PlayerToFindProps) {
             ${item.isWinning ? 'win' : ''}
             `}
           >
-            {((item.height * 2.54) / 100).toFixed(2)}
+            {((item.height * 2.54) / 100).toFixed(2)}m / {item.height}"
           </div>
           <div
             className={`PlayerToFind-container__card-div age 

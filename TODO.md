@@ -8,15 +8,15 @@
 
 ### Header
 
-- [ ] Bouton nouvelle partie avec génération d'un nouveau "playertoWin"
+- [✓] Bouton nouvelle partie avec génération d'un nouveau "playertoWin"
 - [ ] Faire lien avec Liste des joueurs
 - [ ] Ajouter un How to Play
 
 ### Form
 
-- [ ] Supprimer tableau des résultats après bonne réponse
-- [ ] Laisser seulement 8 tentatives
-- [O] Réponse de l'input qui passent par dessus le tableau
+- [✓] Supprimer tableau des résultats après bonne réponse
+- [✓] Laisser seulement 8 tentatives
+- [✓] Réponse de l'input qui passent par dessus le tableau
 
 ### Tableau
 

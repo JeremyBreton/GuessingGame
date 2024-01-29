@@ -29,22 +29,23 @@ const initialState: FormState = {
   currentMessage: '',
   filteredPlayers: [],
   selectedPlayers: [],
-  playertoWin: {
-    player: 'Stephen Curry',
-    playerId: 201939,
-    team: 'GSW',
-    teamId: 1610612744,
-    conference: 'west',
-    division: 'pacific',
-    age: 33,
-    position: 'G',
-    jersey: 30,
-    height: 74,
-    teams: 'GSW',
-    isWinning: false,
-    isGood: false,
-    isNear: false,
-  },
+  playertoWin: [],
+  // playertoWin: {
+  //   player: 'Stephen Curry',
+  //   playerId: 201939,
+  //   team: 'GSW',
+  //   teamId: 1610612744,
+  //   conference: 'west',
+  //   division: 'pacific',
+  //   age: 33,
+  //   position: 'G',
+  //   jersey: 30,
+  //   height: 74,
+  //   teams: 'GSW',
+  //   isWinning: false,
+  //   isGood: false,
+  //   isNear: false,
+  // },
 };
 
 // !
@@ -92,48 +93,62 @@ const FormReducer = createReducer(initialState, (builder) => {
     })
 
     .addCase(selectPlayer, (state, action) => {
-      state.selectedPlayers.push({
-        ...action.payload,
-        // WIN
-        isWinning: action.payload.player === state.playertoWin.player,
-        // CONFERENCE
-        isGoodConference:
-          action.payload.conference === state.playertoWin.conference,
-        // DIVISION
-        isGoodDivision: action.payload.division === state.playertoWin.division,
-        // POSITION
-        isGoodPosition: action.payload.position === state.playertoWin.position,
-        isNearPosition: action.payload.position.includes(
-          state.playertoWin.position
-        ),
-        // TEAM
-        isGoodTeam: action.payload.team.includes(state.playertoWin.team),
-        isNearTeam: action.payload.teams.includes(state.playertoWin.teams),
-        // HEIGHT
-        isGoodHeight: action.payload.height === state.playertoWin.height,
-        isNearHeight:
-          Math.abs(action.payload.height - state.playertoWin.height) <= 1,
-        // JERSEY
-        isGoodJersey: action.payload.jersey === state.playertoWin.jersey,
-        isNearJersey:
-          Math.abs(action.payload.jersey - state.playertoWin.jersey) <= 1,
-        // AGE
-        isGoodAge: action.payload.age === state.playertoWin.age,
-        isNearAge: Math.abs(action.payload.age - state.playertoWin.age) <= 1,
-      });
-      state.currentMessage = '';
+      const isPlayerAlreadySelected = state.selectedPlayers.some(
+        (selectedPlayer) => selectedPlayer.player === action.payload.player
+      );
+      if (!isPlayerAlreadySelected && state.selectedPlayers.length < 8) {
+        state.selectedPlayers.push({
+          ...action.payload,
+          // WIN
+          isWinning: action.payload.player === state.playertoWin.player,
+          // CONFERENCE
+          isGoodConference:
+            action.payload.conference === state.playertoWin.conference,
+          // DIVISION
+          isGoodDivision:
+            action.payload.division === state.playertoWin.division,
+          // POSITION
+          isGoodPosition:
+            action.payload.position === state.playertoWin.position,
+          isNearPosition: action.payload.position.includes(
+            state.playertoWin.position
+          ),
+          // TEAM
+          isGoodTeam: action.payload.team.includes(state.playertoWin.team),
+          isNearTeam: action.payload.teams.includes(state.playertoWin.teams),
+          // HEIGHT
+          isGoodHeight: action.payload.height === state.playertoWin.height,
+          isNearHeight:
+            Math.abs(action.payload.height - state.playertoWin.height) <= 1,
+          // JERSEY
+          isGoodJersey: action.payload.jersey === state.playertoWin.jersey,
+          isNearJersey:
+            Math.abs(action.payload.jersey - state.playertoWin.jersey) <= 1,
+          // AGE
+          isGoodAge: action.payload.age === state.playertoWin.age,
+          isNearAge: Math.abs(action.payload.age - state.playertoWin.age) <= 1,
+        });
+        state.currentMessage = '';
 
-      console.log('LOG DE action.payload', action.payload);
-      console.log('LOG DE playertoWin', playertoWin);
+        // console.log('LOG DE action.payload', action.payload);
+        // console.log('LOG DE playertoWin', playertoWin);
 
-      if (action.payload.player === state.playertoWin.player) {
-        playertoWin.isWinning = true; // Marquez le joueur gagnant
-        alert(`YOU WIN, THE RIGHT ANSWER IS ${state.playertoWin.player}`);
+        if (state.selectedPlayers.length === 8) {
+          alert(`8/8 guess, perdu le joueur était ${state.playertoWin.player}`);
+        }
+
+        if (action.payload.player === state.playertoWin.player) {
+          playertoWin.isWinning = true; // Marquez le joueur gagnant
+          alert(`YOU WIN, THE RIGHT ANSWER IS ${state.playertoWin.player}`);
+        }
+      } else if (isPlayerAlreadySelected) {
+        alert('Player déjà sélectionné !');
       }
     })
     // !
     .addCase(updatePlayerToWin, (state) => {
       state.playertoWin = getRandomPlayer(players);
+      state.selectedPlayers = [];
     });
   // !
 });

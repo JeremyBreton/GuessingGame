@@ -8,7 +8,7 @@
   padding: v.$gutter;
   overflow-y: scroll;
   height: 25rem;
-  border: 2px red solid;
+  border: 0.3rem solid v.$color-primary;
 
   &__card {
     width: 100%;
@@ -43,4 +43,16 @@
 .win {
   background: green;
   border: 2px solid #fafafa;
+}
+
+.hidden {
+  background: yellow;
+}
+
+.PlayerToFind-container__card-div.height.arrow-up::before {
+  content: '↑';
+}
+
+.PlayerToFind-container__card-div.height.arrow-down::before {
+  content: '↓';
 }
