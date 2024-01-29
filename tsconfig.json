@@ -20,6 +20,6 @@
     "vite.config.ts",
     ".eslintrc.cjs",
     "src"
-, "main.tsx"  ],
+, "src/main.tsx"  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
