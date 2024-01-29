@@ -1,6 +1,7 @@
 @use '../../../styles/variables' as v;
 
 .listPlayers-container {
+  border: 2px solid blue;
   width: 90%;
   height: 300px;
   margin: auto;

@@ -7,7 +7,7 @@ type FormState = {
   currentMessage: string;
   filteredPlayers: PlayerType[];
   selectedPlayers: PlayerType[];
-  playertoWin: string;
+  playertoWin: PlayerType;
 };
 
 const initialState: FormState = {
@@ -47,11 +47,21 @@ const initialState: FormState = {
   },
 };
 
+// !
+const getRandomPlayer = (players: PlayerType[]): PlayerType => {
+  const randomIndex = Math.floor(Math.random() * players.length);
+  return players[randomIndex];
+};
+// !
+
 // Actions
 export const changeCurrentMessage = createAction<string>(
   'form/change-current-message'
 );
 export const selectPlayer = createAction<PlayerType>('form/select-player');
+// !
+export const updatePlayerToWin = createAction('form/update-player-to-win');
+// !
 
 const FormReducer = createReducer(initialState, (builder) => {
   const playertoWin = {
@@ -85,37 +95,47 @@ const FormReducer = createReducer(initialState, (builder) => {
       state.selectedPlayers.push({
         ...action.payload,
         // WIN
-        isWinning: action.payload.player === playertoWin.player,
+        isWinning: action.payload.player === state.playertoWin.player,
         // CONFERENCE
-        isGoodConference: action.payload.conference === playertoWin.conference,
+        isGoodConference:
+          action.payload.conference === state.playertoWin.conference,
         // DIVISION
-        isGoodDivision: action.payload.division === playertoWin.division,
+        isGoodDivision: action.payload.division === state.playertoWin.division,
         // POSITION
-        isGoodPosition: action.payload.position === playertoWin.position,
-        isNearPosition: action.payload.position.includes(playertoWin.position),
+        isGoodPosition: action.payload.position === state.playertoWin.position,
+        isNearPosition: action.payload.position.includes(
+          state.playertoWin.position
+        ),
         // TEAM
-        isGoodTeam: action.payload.team.includes(playertoWin.team),
-        isNearTeam: action.payload.teams.includes(playertoWin.teams),
+        isGoodTeam: action.payload.team.includes(state.playertoWin.team),
+        isNearTeam: action.payload.teams.includes(state.playertoWin.teams),
         // HEIGHT
-        isGoodHeight: action.payload.height === playertoWin.height,
-        isNearHeight: Math.abs(action.payload.height - playertoWin.height) <= 1,
+        isGoodHeight: action.payload.height === state.playertoWin.height,
+        isNearHeight:
+          Math.abs(action.payload.height - state.playertoWin.height) <= 1,
         // JERSEY
-        isGoodJersey: action.payload.jersey === playertoWin.jersey,
-        isNearJersey: Math.abs(action.payload.jersey - playertoWin.jersey) <= 1,
+        isGoodJersey: action.payload.jersey === state.playertoWin.jersey,
+        isNearJersey:
+          Math.abs(action.payload.jersey - state.playertoWin.jersey) <= 1,
         // AGE
-        isGoodAge: action.payload.age === playertoWin.age,
-        isNearAge: Math.abs(action.payload.age - playertoWin.age) <= 1,
+        isGoodAge: action.payload.age === state.playertoWin.age,
+        isNearAge: Math.abs(action.payload.age - state.playertoWin.age) <= 1,
       });
       state.currentMessage = '';
 
       console.log('LOG DE action.payload', action.payload);
       console.log('LOG DE playertoWin', playertoWin);
 
-      if (action.payload.player === playertoWin.player) {
+      if (action.payload.player === state.playertoWin.player) {
         playertoWin.isWinning = true; // Marquez le joueur gagnant
-        alert(`YOU WIN, THE RIGHT ANSWER IS ${playertoWin.player}`);
+        alert(`YOU WIN, THE RIGHT ANSWER IS ${state.playertoWin.player}`);
       }
+    })
+    // !
+    .addCase(updatePlayerToWin, (state) => {
+      state.playertoWin = getRandomPlayer(players);
     });
+  // !
 });
 
 export default FormReducer;

@@ -1,6 +1,7 @@
 @use '../../../styles/variables' as v;
 
 .form {
+  border: 2px solid yellow;
   width: 90%;
   margin: v.$gutter auto;
   display: flex;

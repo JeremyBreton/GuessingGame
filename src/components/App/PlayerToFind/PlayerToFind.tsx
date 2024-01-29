@@ -26,11 +26,12 @@ function PlayerToFind({ players, selectedPlayers }: PlayerToFindProps) {
   const playerToWin = useAppSelector((state) => state.form.playertoWin);
   // console.log(PlayerToFind);
   // console.log('LOG DE selectedPlayers', selectedPlayers); // undefined
-  // console.log('LOG DE selectedPlayer dans PlayerToFind.tsx', selectedPlayer);
-  // console.log('LOG DE PLAYERTOWIN dans PlayerToFind.tsx', playerToWin);
+  console.log('LOG DE selectedPlayer dans PlayerToFind.tsx', selectedPlayer);
+  console.log('LOG DE PLAYERTOWIN dans PlayerToFind.tsx', playerToWin);
 
   return (
     <div className="PlayerToFind-container">
+      <h2>playerToFind.tsx</h2>
       <article className="PlayerToFind-container__card">
         <div className="PlayerToFind-container__card-div player">NOM</div>
         <div className="PlayerToFind-container__card-div team">TEAM</div>

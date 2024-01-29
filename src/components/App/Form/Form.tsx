@@ -46,6 +46,7 @@ function Form({ players }: FormProps) {
 
   return (
     <div>
+      <h2>form.tsx</h2>
       {/* <div>Texte tapé et récupéré : {currentMessage}</div>
       <p>Nb joueurs filtrés : {filteredPlayers.length}</p> */}
       <form className="form" onSubmit={handleSubmit}>
