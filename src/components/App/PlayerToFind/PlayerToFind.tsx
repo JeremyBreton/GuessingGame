@@ -30,6 +30,36 @@ function PlayerToFind({ players, selectedPlayers }: PlayerToFindProps) {
   // console.log('LOG DE selectedPlayer dans PlayerToFind.tsx', selectedPlayer);
   // console.log('LOG DE PLAYERTOWIN dans PlayerToFind.tsx', playerToWin);
 
+  function selectedPlayerHeightClass(selectedHeight, winHeight) {
+    if (selectedHeight < winHeight) {
+      return 'arrow-up';
+    } else if (selectedHeight > winHeight) {
+      return 'arrow-down';
+    } else {
+      return '';
+    }
+  }
+
+  function selectedPlayerAgeClass(selectedAge, winAge) {
+    if (selectedAge < winAge) {
+      return 'arrow-up';
+    } else if (selectedAge > winAge) {
+      return 'arrow-down';
+    } else {
+      return '';
+    }
+  }
+
+  function selectedPlayerNumberClass(selectedNumber, winNumber) {
+    if (selectedNumber < winNumber) {
+      return 'arrow-up';
+    } else if (selectedNumber > winNumber) {
+      return 'arrow-down';
+    } else {
+      return '';
+    }
+  }
+
   return (
     <div className="PlayerToFind-container">
       <p>{selectedPlayer.length}/8 TENTATIVES</p>
@@ -98,27 +128,40 @@ function PlayerToFind({ players, selectedPlayers }: PlayerToFindProps) {
             ${item.isGoodHeight ? 'good' : ''}
             ${item.isNearHeight ? 'near' : ''}
             ${item.isWinning ? 'win' : ''}
+            ${selectedPlayerHeightClass(item.height, playerToWin.height)}
             `}
           >
-            {((item.height * 2.54) / 100).toFixed(2)}m / {item.height}"
+            {((item.height * 2.54) / 100).toFixed(2)}
+            {selectedPlayerHeightClass(item.height, playerToWin.height) ===
+              'arrow-up'}
+            {selectedPlayerHeightClass(item.height, playerToWin.height) ===
+              'arrow-down'}
           </div>
           <div
             className={`PlayerToFind-container__card-div age 
             ${item.isGoodAge ? 'good' : ''}
             ${item.isNearAge ? 'near' : ''}
             ${item.isWinning ? 'win' : ''}
+            ${selectedPlayerAgeClass(item.age, playerToWin.age)}
             `}
           >
             {item.age}
+            {selectedPlayerAgeClass(item.age, playerToWin.age) === 'arrow-up'}
+            {selectedPlayerAgeClass(item.age, playerToWin.age) === 'arrow-down'}
           </div>
           <div
             className={`PlayerToFind-container__card-div jersey 
             ${item.isGoodJersey ? 'good' : ''}
             ${item.isNearJersey ? 'near' : ''}
             ${item.isWinning ? 'win' : ''}
+            ${selectedPlayerNumberClass(item.jersey, playerToWin.jersey)}
             `}
           >
             {item.jersey}
+            {selectedPlayerNumberClass(item.jersey, playerToWin.jersey) ===
+              'arrow-up'}
+            {selectedPlayerNumberClass(item.jersey, playerToWin.jersey) ===
+              'arrow-down'}
           </div>
         </article>
       ))}
