@@ -146,7 +146,6 @@ const FormReducer = createReducer(initialState, (builder) => {
           // alert(`YOU WIN, THE RIGHT ANSWER IS ${state.playertoWin.player}`);
         }
       } else if (isPlayerAlreadySelected) {
-        alert('Player déjà sélectionné !');
       }
     })
     // !

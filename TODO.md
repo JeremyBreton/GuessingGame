@@ -24,7 +24,7 @@
 
 ### Popup
 
-- [ ] Mise en forme d'une fenêtre de victoire
+- [✓] Mise en forme d'une fenêtre de victoire
 
 ## Nouvelles fonctionnalités
 

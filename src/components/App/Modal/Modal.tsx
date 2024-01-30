@@ -18,9 +18,6 @@ function Modal() {
 
   return (
     <>
-      <button onClick={toggleModal} className="btn-modal">
-        Open
-      </button>
       {modalOpen && (
         <div className="modal-overlay" onClick={toggleModal}>
           <div className="modal-content">
