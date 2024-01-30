@@ -39,28 +39,40 @@
     border-radius: v.$gutter/2;
     padding: v.$gutter/2;
     display: flex;
+    flex: 1;
     margin: 0;
 
     @media (max-width: 767px) {
       width: 100%;
       padding: 0;
+      flex-wrap: wrap;
     }
 
     &-div {
-      width: 12%;
+      flex: 1;
       background: v.$color-bg-darkest;
       padding: v.$gutter;
       border-radius: v.$gutter/2;
       margin: v.$gutter/5;
       align-items: center;
       display: flex;
-      flex-direction: column;
       justify-content: center;
+      flex-wrap: wrap;
+      width: 100%;
 
       @media (max-width: 767px) {
-        font-size: 0.6rem;
-        margin: v.$gutter/10;
-        padding: v.$gutter/2;
+        width: 10%;
+        padding: 0;
+        flex-wrap: wrap;
+        font-size: 0.7rem;
+      }
+    }
+
+    &-div.player {
+      @media (max-width: 767px) {
+        height: 3rem;
+        padding: 0 1.2rem;
+        overflow: hidden;
       }
     }
   }
