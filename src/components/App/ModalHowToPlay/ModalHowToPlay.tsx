@@ -20,8 +20,8 @@ function Modal() {
   return (
     <>
       {modalHowToPlayOpen && (
-        <div className="modal-overlay" onClick={toggleHowToPlayModal}>
-          <div className="modal-content">
+        <div className="modal-overlay-HTP" onClick={toggleHowToPlayModal}>
+          <div className="modal-content-HTP">
             <h2>Comment jouer ?</h2>
             <p>Vous avez 8 tentatives pour trouver le joueur mystère !</p>
             <br />

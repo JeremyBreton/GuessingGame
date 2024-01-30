@@ -27,7 +27,9 @@
 
 ### Popup
 
+- [✓] Mise en forme d'une fenêtre de comment jouer
 - [✓] Mise en forme d'une fenêtre de victoire
+- [ ] Mise en forme d'une fenêtre de défaite
 
 ## Nouvelles fonctionnalités
 
