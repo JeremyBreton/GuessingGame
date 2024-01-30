@@ -3,6 +3,7 @@
 $color: #fffceb;
 $color-primary: #00a19c;
 $color-bg: #282c34;
+$color-bg-lightest: color.scale($color-bg, $lightness: 30%);
 $color-bg-light: color.scale($color-bg, $lightness: 10%);
 $color-bg-dark: color.scale($color-bg, $lightness: -20%);
 $color-bg-darkest: color.scale($color-bg, $lightness: -40%);

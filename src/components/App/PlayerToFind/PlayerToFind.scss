@@ -15,7 +15,7 @@
   }
 
   &::-webkit-scrollbar {
-    width: 1rem; /* width of the entire scrollbar */
+    width: 0.5rem; /* width of the entire scrollbar */
     border-radius: v.$gutter/2;
 
     @media (max-width: 767px) {
@@ -29,7 +29,7 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: v.$color-bg-darkest; /* color of the scroll thumb */
+    background-color: v.$color-bg-lightest; /* color of the scroll thumb */
     border-radius: 1rem; /* roundness of the scroll thumb */
   }
 
