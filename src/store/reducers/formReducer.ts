@@ -1,6 +1,7 @@
 import { createReducer, createAction } from '@reduxjs/toolkit';
 import players from '../../data/players';
 import { PlayerType } from '../../@types';
+import finalPropsSelectorFactory from 'react-redux/es/connect/selectorFactory';
 
 type FormState = {
   players: PlayerType[];
@@ -9,6 +10,8 @@ type FormState = {
   selectedPlayers: PlayerType[];
   playertoWin: PlayerType;
   modalOpen: boolean;
+  modalHowToPlayOpen: Boolean;
+  buttonRestartDisplay: Boolean;
 };
 
 const initialState: FormState = {
@@ -48,24 +51,24 @@ const initialState: FormState = {
   //   isNear: false,
   // },
   modalOpen: false,
+  modalHowToPlayOpen: false,
+  buttonRestartDisplay: false,
 };
 
-// !
 const getRandomPlayer = (players: PlayerType[]): PlayerType => {
   const randomIndex = Math.floor(Math.random() * players.length);
   return players[randomIndex];
 };
-// !
 
 // Actions
 export const changeCurrentMessage = createAction<string>(
   'form/change-current-message'
 );
 export const selectPlayer = createAction<PlayerType>('form/select-player');
-// !
 export const updatePlayerToWin = createAction('form/update-player-to-win');
 export const openWinModal = createAction('form/open-win-modal');
-// !
+export const openHowToPlayModal = createAction('form/open-howtoplay-modal');
+export const displayButtonRestart = createAction('form/display-button-restart');
 
 const FormReducer = createReducer(initialState, (builder) => {
   const playertoWin = {
@@ -118,7 +121,9 @@ const FormReducer = createReducer(initialState, (builder) => {
           ),
           // TEAM
           isGoodTeam: action.payload.team.includes(state.playertoWin.team),
-          isNearTeam: action.payload.teams.includes(state.playertoWin.teams),
+          isNearTeam: action.payload.teams
+            .split('.')
+            .includes(state.playertoWin.teams),
           // HEIGHT
           isGoodHeight: action.payload.height === state.playertoWin.height,
           isNearHeight:
@@ -143,21 +148,25 @@ const FormReducer = createReducer(initialState, (builder) => {
         if (action.payload.player === state.playertoWin.player) {
           playertoWin.isWinning = true; // Marquez le joueur gagnant
           state.modalOpen = true;
+          state.buttonRestartDisplay = true;
           // alert(`YOU WIN, THE RIGHT ANSWER IS ${state.playertoWin.player}`);
         }
       } else if (isPlayerAlreadySelected) {
       }
     })
-    // !
     .addCase(updatePlayerToWin, (state) => {
       state.playertoWin = getRandomPlayer(players);
       state.selectedPlayers = [];
     })
     .addCase(openWinModal, (state) => {
-      // state.modalOpen = true;
       state.modalOpen = !state.modalOpen;
+    })
+    .addCase(openHowToPlayModal, (state) => {
+      state.modalHowToPlayOpen = !state.modalHowToPlayOpen;
+    })
+    .addCase(displayButtonRestart, (state) => {
+      state.buttonRestartDisplay = !state.buttonRestartDisplay;
     });
-  // !
 });
 
 export default FormReducer;

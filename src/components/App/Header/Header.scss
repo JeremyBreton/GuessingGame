@@ -1,7 +1,5 @@
 @use '../../../styles/variables' as v;
 
 .header-container {
-  background-color: v.$color-bg-darkest;
-  width: 100%;
   padding: v.$gutter;
 }

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './Modal.scss';
+import './ModalWin.scss';
 import { openWinModal } from '../../../store/reducers/formReducer';
 import { useDispatch, useSelector } from 'react-redux';
 import { useAppSelector } from '../../../hooks/redux';
@@ -22,6 +22,7 @@ function Modal() {
         <div className="modal-overlay" onClick={toggleModal}>
           <div className="modal-content">
             <p>Bien joué, la bonne réponse est</p>
+            <br />
             <h2>
               {playertoWin.player} ({playertoWin.team})
             </h2>

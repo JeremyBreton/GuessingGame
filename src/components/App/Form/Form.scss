@@ -1,7 +1,7 @@
 @use '../../../styles/variables' as v;
 
 .form {
-  width: 90%;
+  width: 50%;
   margin: v.$gutter auto;
   display: flex;
   flex-wrap: wrap;
@@ -14,9 +14,15 @@
 
   &-input {
     width: 50%;
+    height: 5rem;
     margin: auto;
     padding-left: v.$gutter;
-    color: v.$color-bg;
+    color: v.$color;
+    background-color: v.$color-bg-light;
+
+    &::placeholder {
+      color: v.$color;
+    }
   }
   &-results {
     // width: 50%;
@@ -39,9 +45,9 @@
     z-index: 1;
 
     &-li {
-      border: 1px solid v.$color-bg-darkest;
-      background: v.$color;
-      color: v.$color-bg-darkest;
+      border: 1px solid v.$color-bg-dark;
+      background: v.$color-bg-light;
+      color: v.$color;
       padding: v.$gutter/4;
       text-align: left;
       padding-left: v.$gutter;

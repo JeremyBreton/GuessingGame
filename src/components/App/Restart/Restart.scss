@@ -1,15 +1,44 @@
 @use '../../../styles/variables' as v;
 
 #buttonRestart {
-  background-color: v.$color-primary;
+  padding: 15px 25px;
+  border: unset;
+  border-radius: 15px;
+  color: v.$color-primary;
+  z-index: 1;
+  background: v.$color-bg-darkest;
+  position: relative;
+  font-weight: 1000;
+  font-size: 17px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+  overflow: hidden;
+  margin-right: 2rem;
   margin-top: 1rem;
-  border: 2px solid v.$color;
-  border-radius: v.$gutter/2;
-  color: v.$color;
   width: 25%;
   height: 5rem;
 
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: v.$color-primary;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: all 250ms;
+  }
+
   &:hover {
-    font-weight: bold;
+    color: v.$color;
+  }
+
+  &:hover::before {
+    width: 100%;
   }
 }
