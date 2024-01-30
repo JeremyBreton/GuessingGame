@@ -1,5 +1,73 @@
 @use '../../../styles/variables' as v;
 
+// .form {
+//   width: 50%;
+//   margin: v.$gutter auto;
+//   display: flex;
+//   flex-wrap: wrap;
+//   flex-direction: column;
+//   // background: v.$color-bg-darkest;
+//   border-radius: v.$gutter/2;
+//   // padding: v.$gutter * 2;
+//   line-height: v.$gutter * 2;
+//   position: relative;
+
+//   &-input {
+//     all: unset;
+//     width: 50%;
+//     height: 5rem;
+//     margin: auto;
+//     padding-left: v.$gutter;
+//     color: v.$color;
+//     background-color: v.$color-bg-light;
+//     text-align: left;
+//     border: 2px solid v.$color-bg-light;
+//     border-radius: v.$gutter/2;
+
+//     &::placeholder {
+//       color: v.$color;
+//     }
+//     &:focus-visible {
+//       border: 2px solid v.$color-primary;
+//     }
+//   }
+//   &-results {
+//     // width: 50%;
+//     // height: 10rem;
+//     // overflow-y: scroll;
+//     // margin: auto;
+//     // list-style-type: none;
+//     // z-index: 1;
+//     position: absolute; /* Ajoutez cette ligne pour positionner l'élément absolument par rapport à son parent positionné (form) */
+//     top: 100%; /* Ajoutez cette ligne pour placer l'élément en dessous de l'input */
+//     left: 50%; /* Modifiez cette ligne pour centrer la liste des résultats sous l'input */
+//     transform: translateX(
+//       -50%
+//     ); /* Ajoutez cette ligne pour ajuster la position horizontale */
+//     width: 50%;
+//     max-height: 12rem; /* Ajoutez cette ligne pour définir une hauteur maximale pour la liste déroulante */
+//     overflow-y: auto; /* Ajoutez cette ligne pour ajouter une barre de défilement si nécessaire */
+//     margin: auto;
+//     list-style-type: none;
+//     z-index: 1;
+//     width: 50%;
+
+//     &-li {
+//       // border: 1px solid v.$color-bg-dark;
+//       background: v.$color-bg-light;
+//       color: v.$color;
+//       padding: v.$gutter/4;
+//       text-align: left;
+//       padding-left: v.$gutter;
+
+//       &:hover {
+//         background: v.$color-primary;
+//         color: v.$color-bg-dark;
+//       }
+//     }
+//   }
+// }
+
 .form {
   width: 50%;
   margin: v.$gutter auto;
@@ -13,15 +81,22 @@
   position: relative;
 
   &-input {
+    all: unset;
     width: 50%;
     height: 5rem;
     margin: auto;
     padding-left: v.$gutter;
     color: v.$color;
     background-color: v.$color-bg-light;
+    text-align: left;
+    border: 2px solid v.$color-bg-light;
+    border-radius: v.$gutter/2;
 
     &::placeholder {
       color: v.$color;
+    }
+    &:focus-visible {
+      border: 2px solid v.$color-primary;
     }
   }
   &-results {
@@ -43,14 +118,45 @@
     margin: auto;
     list-style-type: none;
     z-index: 1;
+    width: 50%;
 
     &-li {
-      border: 1px solid v.$color-bg-dark;
-      background: v.$color-bg-light;
-      color: v.$color;
-      padding: v.$gutter/4;
-      text-align: left;
-      padding-left: v.$gutter;
+      padding: 0.5rem 0;
+      border: unset;
+      // border-radius: 15px;
+      color: v.$color-primary;
+      z-index: 1;
+      background: v.$color-bg-darkest;
+      position: relative;
+      font-size: 17px;
+      -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+      box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+      transition: all 250ms;
+      overflow: hidden;
+      height: 3rem;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        // border-radius: 15px;
+        background-color: v.$color-primary;
+        z-index: -1;
+        -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+        transition: all 250ms;
+      }
+
+      &:hover {
+        color: v.$color;
+      }
+
+      &:hover::before {
+        width: 100%;
+      }
     }
   }
 }

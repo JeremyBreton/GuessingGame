@@ -66,9 +66,7 @@ function PlayerToFind({ players, selectedPlayers }: PlayerToFindProps) {
       <article className="PlayerToFind-container__card">
         <div className="PlayerToFind-container__card-div player">NOM</div>
         <div className="PlayerToFind-container__card-div team">TEAM</div>
-        <div className="PlayerToFind-container__card-div conference">
-          CONFERENCE
-        </div>
+        <div className="PlayerToFind-container__card-div conference">CONF.</div>
         <div className="PlayerToFind-container__card-div division">
           DIVISION
         </div>

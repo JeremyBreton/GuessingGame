@@ -4,13 +4,16 @@
 
 - [ ] MAJ des données
 
+## Responsive
+
+- [ ] Responsive
+
 ## Bug/Améliorations
 
 ### Header
 
 - [✓] Bouton nouvelle partie avec génération d'un nouveau "playertoWin"
-- [ ] Faire lien avec Liste des joueurs
-- [ ] Ajouter un How to Play
+- [✓] Ajouter un How to Play
 
 ### Form
 
@@ -29,3 +32,7 @@
 ## Nouvelles fonctionnalités
 
 - [ ] DarkMode/LightMode
+
+## Bonus
+
+- [ ] Faire lien avec Liste des joueurs ?
