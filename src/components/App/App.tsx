@@ -7,6 +7,7 @@ import Header from './Header/Header';
 import Form from './Form/Form';
 import PlayerToFind from './PlayerToFind/PlayerToFind';
 import Restart from './Restart/Restart';
+import Modal from './Modal/Modal';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Header />
       </header>
       <main>
+        <Modal />
         <Restart />
         {/* <ListPlayers players={playersData} /> */}
         {/* <OnePlayer players={playersData} /> */}

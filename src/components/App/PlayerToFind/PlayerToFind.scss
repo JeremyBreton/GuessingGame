@@ -13,23 +13,17 @@
   &__card {
     width: 100%;
     margin: v.$gutter/2 auto;
-    // background: v.$color-bg-light;
     border-radius: v.$gutter/2;
     padding: v.$gutter/2;
     display: flex;
     margin: 0;
 
     &-div {
-      &:first-child {
-        flex: 20%;
-        width: 20%;
-      }
-
       width: 12%;
       background: v.$color-bg-darkest;
       padding: v.$gutter * 2;
       border-radius: v.$gutter/2;
-      margin: v.$gutter/10;
+      margin: v.$gutter/5;
       align-items: center;
       display: flex;
       flex-direction: column;

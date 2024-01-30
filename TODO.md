@@ -20,8 +20,7 @@
 
 ### Tableau
 
-- [ ] Ajouter flèche si + ou -
-- [ ] Fermer le tableau au chargement du site
+- [✓] Ajouter flèche si + ou -
 
 ### Popup
 
@@ -29,4 +28,4 @@
 
 ## Nouvelles fonctionnalités
 
-- [ ] DarkMode
+- [ ] DarkMode/LightMode

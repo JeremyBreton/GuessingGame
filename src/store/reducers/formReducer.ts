@@ -8,6 +8,7 @@ type FormState = {
   filteredPlayers: PlayerType[];
   selectedPlayers: PlayerType[];
   playertoWin: PlayerType;
+  modalOpen: boolean;
 };
 
 const initialState: FormState = {
@@ -46,6 +47,7 @@ const initialState: FormState = {
   //   isGood: false,
   //   isNear: false,
   // },
+  modalOpen: false,
 };
 
 // !
@@ -62,6 +64,7 @@ export const changeCurrentMessage = createAction<string>(
 export const selectPlayer = createAction<PlayerType>('form/select-player');
 // !
 export const updatePlayerToWin = createAction('form/update-player-to-win');
+export const openWinModal = createAction('form/open-win-modal');
 // !
 
 const FormReducer = createReducer(initialState, (builder) => {
@@ -139,7 +142,8 @@ const FormReducer = createReducer(initialState, (builder) => {
 
         if (action.payload.player === state.playertoWin.player) {
           playertoWin.isWinning = true; // Marquez le joueur gagnant
-          alert(`YOU WIN, THE RIGHT ANSWER IS ${state.playertoWin.player}`);
+          state.modalOpen = true;
+          // alert(`YOU WIN, THE RIGHT ANSWER IS ${state.playertoWin.player}`);
         }
       } else if (isPlayerAlreadySelected) {
         alert('Player déjà sélectionné !');
@@ -149,6 +153,10 @@ const FormReducer = createReducer(initialState, (builder) => {
     .addCase(updatePlayerToWin, (state) => {
       state.playertoWin = getRandomPlayer(players);
       state.selectedPlayers = [];
+    })
+    .addCase(openWinModal, (state) => {
+      // state.modalOpen = true;
+      state.modalOpen = !state.modalOpen;
     });
   // !
 });

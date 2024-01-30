@@ -3,7 +3,7 @@ import { useAppSelector } from '../../../hooks/redux';
 import './Restart.scss';
 import players from '../../../data/players';
 import { updatePlayerToWin } from '../../../store/reducers/formReducer';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function Restart() {
   const dispatch = useDispatch();
