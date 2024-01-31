@@ -5,13 +5,27 @@
   background-color: v.$color-bg-darkest;
   width: 100%;
   padding: 0.5rem 0;
+  display: flex;
+  justify-content: center;
 
   @media (max-width: 767px) {
     font-size: 0.8rem;
   }
 
-  & a {
+  & a,
+  p {
     text-decoration: none;
     color: v.$color-primary;
+  }
+
+  & img {
+    width: 1.3rem;
+    display: inline;
+    margin-left: 0.5rem;
+
+    &:hover {
+      transform: scale(1.2);
+      transition: 250ms;
+    }
   }
 }
