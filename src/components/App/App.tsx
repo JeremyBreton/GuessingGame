@@ -12,6 +12,7 @@ import Navbar from './NavBar/Navbar';
 import Footer from './Footer/Footer';
 import ModalHowToPlay from './ModalHowToPlay/ModalHowToPlay';
 import NewGame from './NewGame/NewGame';
+import ModalLoose from './ModalLoose/ModalLoose';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <main>
         <NewGame />
         <ModalWin />
+        <ModalLoose />
         <ModalHowToPlay />
         {/* <ListPlayers players={playersData} /> */}
         {/* <OnePlayer players={playersData} /> */}

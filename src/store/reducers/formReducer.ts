@@ -12,6 +12,7 @@ type FormState = {
   modalOpen: boolean;
   modalHowToPlayOpen: Boolean;
   buttonRestartDisplay: Boolean;
+  modalOpenLoose: Boolean;
 };
 
 const initialState: FormState = {
@@ -53,6 +54,7 @@ const initialState: FormState = {
   modalOpen: false,
   modalHowToPlayOpen: false,
   buttonRestartDisplay: false,
+  modalOpenLoose: false,
 };
 
 const getRandomPlayer = (players: PlayerType[]): PlayerType => {
@@ -69,6 +71,7 @@ export const updatePlayerToWin = createAction('form/update-player-to-win');
 export const openWinModal = createAction('form/open-win-modal');
 export const openHowToPlayModal = createAction('form/open-howtoplay-modal');
 export const displayButtonRestart = createAction('form/display-button-restart');
+export const openLooseModal = createAction('form/open-loose-modal');
 
 const FormReducer = createReducer(initialState, (builder) => {
   const playertoWin = {
@@ -142,7 +145,9 @@ const FormReducer = createReducer(initialState, (builder) => {
         // console.log('LOG DE playertoWin', playertoWin);
 
         if (state.selectedPlayers.length === 8) {
-          alert(`8/8 guess, perdu le joueur était ${state.playertoWin.player}`);
+          state.modalOpenLoose = true;
+          state.buttonRestartDisplay = true;
+          // alert(`8/8 guess, perdu le joueur était ${state.playertoWin.player}`);
         }
 
         if (action.payload.player === state.playertoWin.player) {
@@ -166,6 +171,10 @@ const FormReducer = createReducer(initialState, (builder) => {
     })
     .addCase(displayButtonRestart, (state) => {
       state.buttonRestartDisplay = !state.buttonRestartDisplay;
+    })
+    .addCase(openLooseModal, (state) => {
+      // state.modalOpenLoose = !state.modalOpenLoose;
+      state.modalOpenLoose = !state.modalOpenLoose;
     });
 });
 

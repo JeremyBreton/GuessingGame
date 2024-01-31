@@ -52,13 +52,12 @@
     &-div {
       flex: 1;
       background: v.$color-bg-darkest;
-      padding: v.$gutter;
+      padding: v.$gutter/1.5;
       border-radius: v.$gutter/2;
       margin: v.$gutter/5;
       align-items: center;
       display: flex;
       justify-content: center;
-      // flex-wrap: wrap;
       width: 100%;
       flex-direction: column;
 

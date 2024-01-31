@@ -6,7 +6,7 @@
 
 ## Responsive
 
-- [ ] Responsive
+- [✓] Responsive
 
 ## Bug/Améliorations
 
