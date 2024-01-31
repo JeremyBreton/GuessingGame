@@ -125,7 +125,7 @@ function PlayerToFind({ players, selectedPlayers }: PlayerToFindProps) {
             ${selectedPlayerHeightClass(item.height, playerToWin.height)}
             `}
           >
-            {((item.height * 2.54) / 100).toFixed(2)}
+            {item.height}
             {selectedPlayerHeightClass(item.height, playerToWin.height) ===
               'arrow-up'}
             {selectedPlayerHeightClass(item.height, playerToWin.height) ===
