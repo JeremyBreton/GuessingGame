@@ -41,6 +41,7 @@
     display: flex;
     flex: 1;
     margin: 0;
+    align-content: center;
 
     @media (max-width: 767px) {
       width: 100%;
@@ -57,18 +58,23 @@
       align-items: center;
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
+      // flex-wrap: wrap;
       width: 100%;
+      flex-direction: column;
 
       @media (max-width: 767px) {
         width: 10%;
         padding: 0;
         flex-wrap: wrap;
         font-size: 0.7rem;
+        margin: v.$gutter/8;
       }
     }
 
     &-div.player {
+      overflow: hidden;
+      align-content: center;
+
       @media (max-width: 767px) {
         height: 3rem;
         padding: 0 1.2rem;
@@ -93,16 +99,32 @@
 .PlayerToFind-container__card-div.age.arrow-up::after,
 .PlayerToFind-container__card-div.height.arrow-up::after {
   content: '\A↑'; // Ajoutez '\A' avant '↑'
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   transform: rotate(45deg);
+  display: block;
+
+  @media (max-width: 767px) {
+    font-size: 1rem;
+  }
 }
 
 .PlayerToFind-container__card-div.jersey.arrow-down::after,
 .PlayerToFind-container__card-div.age.arrow-down::after,
 .PlayerToFind-container__card-div.height.arrow-down::after {
   content: '\A↓'; // Ajoutez '\A' avant '↓'
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   transform: rotate(-45deg);
+
+  @media (max-width: 767px) {
+    font-size: 1rem;
+  }
+}
+
+.guessNumbers {
+  @media (max-width: 767px) {
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem;
+  }
 }

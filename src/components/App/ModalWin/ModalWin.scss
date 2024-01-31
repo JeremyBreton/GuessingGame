@@ -31,7 +31,10 @@
   }
 }
 
-.modal-content > p,
-.modal-content > h2 {
+.modal-content > p {
   color: v.$color-bg-dark;
+}
+
+.modal-content > h2 {
+  color: v.$color;
 }

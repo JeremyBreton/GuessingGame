@@ -7,6 +7,7 @@ import {
   selectPlayer,
 } from '../../../store/reducers/formReducer';
 import { PlayerType } from '../../../@types';
+import React from 'react';
 
 type FormProps = {
   players: PlayerType[];
@@ -20,12 +21,16 @@ function Form({ players }: FormProps) {
   const filteredPlayers = useAppSelector((state) => state.form.filteredPlayers);
   const selectedPlayer = useAppSelector((state) => state.form.selectedPlayers);
   // console.log(selectedPlayer);
+  // Ajoutez un état pour suivre si les résultats sont ouverts ou fermés
+  const [resultsOpen, setResultsOpen] = React.useState(false);
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     // console.log('je tape une lettre');
     // je veux modifier la valeur de `currentMessage` dans mon state Redux
     // avec la saisie utilisateur
     dispatch(changeCurrentMessage(event.target.value));
+    // Ouvrez les résultats lorsqu'il y a du texte
+    setResultsOpen(!!event.target.value);
   }
 
   function handleClick(
@@ -38,7 +43,21 @@ function Form({ players }: FormProps) {
     dispatch(selectPlayer(player));
     // dispatch(addPlayer(selectedPlayer));
     // console.log('Player', selectedPlayer);
+    // Fermez les résultats après avoir sélectionné un joueur
+    setResultsOpen(false);
   }
+
+  function handleCloseResults() {
+    // Fermez les résultats lorsqu'on clique en dehors de la zone des résultats
+    setResultsOpen(false);
+  }
+
+  React.useEffect(() => {
+    // Ajoutez un écouteur d'événements pour fermer les résultats lors d'un clic en dehors du formulaire
+    window.addEventListener('click', handleCloseResults);
+    // Nettoyez l'écouteur d'événements lors du démontage du composant
+    return () => window.removeEventListener('click', handleCloseResults);
+  }, []); // Utilisez un tableau vide pour garantir que cela ne s'exécute qu'une fois au montage
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -46,17 +65,19 @@ function Form({ players }: FormProps) {
 
   return (
     <div>
-      {/* <div>Texte tapé et récupéré : {currentMessage}</div>
-      <p>Nb joueurs filtrés : {filteredPlayers.length}</p> */}
       <form className="form" onSubmit={handleSubmit}>
         <input
-          type="select"
+          type="text"
           className="form-input"
           placeholder="Rechercher un joueur…"
           onChange={handleChange}
           value={currentMessage}
+          onClick={(e) => {
+            // Empêchez la propagation du clic pour éviter la fermeture immédiate des résultats
+            e.stopPropagation();
+          }}
         />
-        {currentMessage && (
+        {resultsOpen && currentMessage && (
           <div className="form-results">
             {filteredPlayers.map((playerFiltered) => (
               <li
@@ -73,5 +94,4 @@ function Form({ players }: FormProps) {
     </div>
   );
 }
-
 export default Form;

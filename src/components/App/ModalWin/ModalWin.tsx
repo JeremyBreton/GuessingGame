@@ -21,7 +21,9 @@ function Modal() {
       {modalOpen && (
         <div className="modal-overlay" onClick={toggleModal}>
           <div className="modal-content">
-            <p>Bien joué, la bonne réponse est</p>
+            <p>Bien joué !</p>
+            <br />
+            <p>Le joueur mystère est</p>
             <br />
             <h2>
               {playertoWin.player} ({playertoWin.team})

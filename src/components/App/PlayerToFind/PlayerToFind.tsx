@@ -62,7 +62,7 @@ function PlayerToFind({ players, selectedPlayers }: PlayerToFindProps) {
 
   return (
     <div className="PlayerToFind-container">
-      <p>{selectedPlayer.length}/8 TENTATIVES</p>
+      <p className="guessNumbers">{selectedPlayer.length}/8 TENTATIVES</p>
       <article className="PlayerToFind-container__card">
         <div className="PlayerToFind-container__card-div player">NOM</div>
         <div className="PlayerToFind-container__card-div team">TEAM</div>
@@ -140,6 +140,7 @@ function PlayerToFind({ players, selectedPlayers }: PlayerToFindProps) {
             `}
           >
             {item.age}
+
             {selectedPlayerAgeClass(item.age, playerToWin.age) === 'arrow-up'}
             {selectedPlayerAgeClass(item.age, playerToWin.age) === 'arrow-down'}
           </div>
