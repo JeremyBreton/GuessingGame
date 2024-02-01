@@ -4602,7 +4602,7 @@ export default [
     teams: 'ATL.NYK.POR',
   },
   {
-    player: 'D'Angelo Russell',
+    player: 'DAngelo Russell',
     playerId: 354,
     team: 'LAL',
     teamId: 23,
@@ -4940,7 +4940,7 @@ export default [
     teams: '',
   },
   {
-    player: 'De\'Aaron Fox',
+    player: "De'Aaron Fox",
     playerId: 380,
     team: 'SAC',
     teamId: 25,
@@ -5460,7 +5460,7 @@ export default [
     teams: '',
   },
   {
-    player: 'Jae\'Sean Tate',
+    player: "Jae'Sean Tate",
     playerId: 420,
     team: 'HOU',
     teamId: 27,
