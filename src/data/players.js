@@ -5423,7 +5423,7 @@ export default [
   {
     player: 'Victor Oladipo',
     playerId: 417,
-    team: 'HOU',
+    team: 'MEM',
     teamId: 27,
     conference: 'West',
     division: 'S-W.',
@@ -5431,7 +5431,7 @@ export default [
     position: 'SG',
     jersey: 3,
     height: 1.91,
-    teams: 'ORL.OKC.IND.MIA',
+    teams: 'ORL.OKC.IND.MIA.HOU',
   },
   {
     player: 'Alperen Sengun',
@@ -5514,7 +5514,7 @@ export default [
   {
     player: 'Steven Adams',
     playerId: 424,
-    team: 'MEM',
+    team: 'HOU',
     teamId: 28,
     conference: 'West',
     division: 'S-W.',
@@ -5522,7 +5522,7 @@ export default [
     position: 'C',
     jersey: 4,
     height: 2.11,
-    teams: 'OKC.NOP',
+    teams: 'OKC.NOP.MEM',
   },
   {
     player: 'Santi Aldama',
