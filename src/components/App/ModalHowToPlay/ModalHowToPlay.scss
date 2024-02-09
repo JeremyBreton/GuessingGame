@@ -19,15 +19,16 @@
   padding: 20px;
   border-radius: 8px;
   position: relative;
-  width: 40vw;
-  height: 40vh;
+  width: 50vw;
+  // height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   @media (max-width: 767px) {
-    width: 75vw;
-    height: 80vh;
+    width: 90%;
+    padding: 2rem;
+    font-size: 0.7rem;
   }
 }
 
