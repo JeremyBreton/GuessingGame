@@ -171,7 +171,7 @@ export default [
   {
     player: 'Lamar Stevens',
     playerId: 13,
-    team: 'BOS',
+    team: 'MEM',
     teamId: 1,
     conference: 'East',
     division: 'Atl.',
@@ -179,7 +179,7 @@ export default [
     position: 'PF',
     jersey: 77,
     height: 2.01,
-    teams: 'CLE',
+    teams: 'CLE.BOS',
   },
   {
     player: 'Jayson Tatum',
@@ -236,7 +236,7 @@ export default [
   {
     player: 'Spencer Dinwiddie',
     playerId: 18,
-    team: 'BKN',
+    team: 'FA',
     teamId: 2,
     conference: 'East',
     division: 'Atl.',
@@ -244,7 +244,7 @@ export default [
     position: 'PG',
     jersey: 26,
     height: 1.96,
-    teams: 'DET.WAS.DAL',
+    teams: 'DET.WAS.DAL.BKN',
   },
   {
     player: 'Dorian Finney-Smith',
@@ -301,7 +301,7 @@ export default [
   {
     player: "Royce O'Neale",
     playerId: 23,
-    team: 'BKN',
+    team: 'PHO',
     teamId: 2,
     conference: 'East',
     division: 'Atl.',
@@ -309,7 +309,7 @@ export default [
     position: 'PF',
     jersey: 0,
     height: 1.98,
-    teams: 'UTA',
+    teams: 'UTA.BKN',
   },
   {
     player: "Day'Ron Sharpe",
@@ -457,7 +457,7 @@ export default [
   {
     player: 'Malachi Flynn',
     playerId: 35,
-    team: 'NYK',
+    team: 'DET',
     teamId: 3,
     conference: 'East',
     division: 'Atl.',
@@ -465,12 +465,12 @@ export default [
     position: 'PG',
     jersey: 4,
     height: 1.85,
-    teams: 'TOR',
+    teams: 'TOR.NYK',
   },
   {
     player: 'Evan Fournier',
     playerId: 36,
-    team: 'NYK',
+    team: 'DET',
     teamId: 3,
     conference: 'East',
     division: 'Atl.',
@@ -478,7 +478,7 @@ export default [
     position: 'SG',
     jersey: 13,
     height: 1.98,
-    teams: 'DEN.ORL.BOS',
+    teams: 'DEN.ORL.BOS.NYK',
   },
   {
     player: 'Taj Gibson',
@@ -496,7 +496,7 @@ export default [
   {
     player: 'Quentin Grimes',
     playerId: 38,
-    team: 'NYK',
+    team: 'DET',
     teamId: 3,
     conference: 'East',
     division: 'Atl.',
@@ -504,7 +504,7 @@ export default [
     position: 'SG',
     jersey: 6,
     height: 1.96,
-    teams: '',
+    teams: 'NYK',
   },
   {
     player: 'Josh Hart',
@@ -639,7 +639,7 @@ export default [
   {
     player: 'Patrick Beverley',
     playerId: 49,
-    team: 'PHI',
+    team: 'MIL',
     teamId: 4,
     conference: 'East',
     division: 'Atl.',
@@ -647,7 +647,7 @@ export default [
     position: 'PG',
     jersey: 22,
     height: 1.88,
-    teams: 'HOU.LAC.MIN.CHI.LAL',
+    teams: 'HOU.LAC.MIN.CHI.LAL.PHI',
   },
   {
     player: 'Robert Covington',
@@ -691,7 +691,7 @@ export default [
   {
     player: 'Danuel House Jr',
     playerId: 53,
-    team: 'PHI',
+    team: 'FA',
     teamId: 4,
     conference: 'East',
     division: 'Atl.',
@@ -699,12 +699,12 @@ export default [
     position: 'SF',
     jersey: 25,
     height: 1.98,
-    teams: 'WAS.PHO.HOU.UTA.NYK',
+    teams: 'WAS.PHO.HOU.UTA.NYK.PHI',
   },
   {
     player: 'Furkan Korkmaz',
     playerId: 54,
-    team: 'PHI',
+    team: 'IND',
     teamId: 4,
     conference: 'East',
     division: 'Atl.',
@@ -712,7 +712,7 @@ export default [
     position: 'SG',
     jersey: 30,
     height: 2.01,
-    teams: '',
+    teams: 'PHI',
   },
   {
     player: 'Kenneth Lofton Jr',
@@ -769,7 +769,7 @@ export default [
   {
     player: 'Marcus Morris Sr',
     playerId: 59,
-    team: 'PHI',
+    team: 'IND',
     teamId: 4,
     conference: 'East',
     division: 'Atl.',
@@ -777,7 +777,7 @@ export default [
     position: 'SF',
     jersey: 5,
     height: 2.03,
-    teams: 'HOU.PHO.DET.BOS.NYK.LAC',
+    teams: 'HOU.PHO.DET.BOS.NYK.LAC.PHI',
   },
   {
     player: 'Kelly Oubre Jr',
@@ -808,7 +808,7 @@ export default [
   {
     player: 'Jaden Springer',
     playerId: 62,
-    team: 'PHI',
+    team: 'BOS',
     teamId: 4,
     conference: 'East',
     division: 'Atl.',
@@ -816,7 +816,7 @@ export default [
     position: 'G',
     jersey: 11,
     height: 1.93,
-    teams: '',
+    teams: 'PHI',
   },
   {
     player: 'Scottie Barnes',
@@ -899,7 +899,7 @@ export default [
   {
     player: 'Kira Lewis Jr',
     playerId: 69,
-    team: 'TOR',
+    team: 'UTA',
     teamId: 5,
     conference: 'East',
     division: 'Atl.',
@@ -907,7 +907,7 @@ export default [
     position: 'PG',
     jersey: 3,
     height: 1.85,
-    teams: 'NOP',
+    teams: 'NOP.TOR',
   },
   {
     player: 'Jalen McDaniels',
@@ -964,7 +964,7 @@ export default [
   {
     player: 'Otto Porter Jr',
     playerId: 75,
-    team: 'TOR',
+    team: 'UTA',
     teamId: 5,
     conference: 'East',
     division: 'Atl.',
@@ -972,7 +972,7 @@ export default [
     position: 'SF',
     jersey: 32,
     height: 2.03,
-    teams: 'WAS.CHI.ORL.GSW',
+    teams: 'WAS.CHI.ORL.GSW.TOR',
   },
   {
     player: 'Immanuel Quickley',
@@ -990,7 +990,7 @@ export default [
   {
     player: 'Dennis Schroder',
     playerId: 77,
-    team: 'TOR',
+    team: 'BKN',
     teamId: 5,
     conference: 'East',
     division: 'Atl.',
@@ -998,7 +998,7 @@ export default [
     position: 'PG',
     jersey: 17,
     height: 1.85,
-    teams: 'ATL.OKC.HOU.BOS.LAL',
+    teams: 'ATL.OKC.HOU.BOS.LAL.TOR',
   },
   {
     player: 'Garrett Temple',
@@ -1029,7 +1029,7 @@ export default [
   {
     player: 'Thaddeus Young',
     playerId: 80,
-    team: 'TOR',
+    team: 'BKN',
     teamId: 5,
     conference: 'East',
     division: 'Atl.',
@@ -1037,7 +1037,7 @@ export default [
     position: 'PF',
     jersey: 21,
     height: 2.03,
-    teams: 'PHI.MIN.BKN.IND.CHI.SAS',
+    teams: 'PHI.MIN.BKN.IND.CHI.SAS.TOR',
   },
   {
     player: 'Lonzo Ball',
@@ -1419,7 +1419,7 @@ export default [
   {
     player: 'Bojan Bogdanovic',
     playerId: 110,
-    team: 'DET',
+    team: 'NYK',
     teamId: 8,
     conference: 'East',
     division: 'Cen.',
@@ -1427,12 +1427,12 @@ export default [
     position: 'SF',
     jersey: 44,
     height: 2.01,
-    teams: 'BKN.WAS.IND.UTA',
+    teams: 'BKN.WAS.IND.UTA.DET',
   },
   {
     player: 'Alec Burks',
     playerId: 111,
-    team: 'DET',
+    team: 'NYK',
     teamId: 8,
     conference: 'East',
     division: 'Cen.',
@@ -1440,7 +1440,7 @@ export default [
     position: 'SG',
     jersey: 14,
     height: 1.96,
-    teams: 'UTA.SAC.CLE.PHI.GSW.NYK',
+    teams: 'UTA.SAC.CLE.PHI.GSW.NYK.DET',
   },
   {
     player: 'Cade Cunningham',
@@ -1484,7 +1484,7 @@ export default [
   {
     player: 'Joe Harris',
     playerId: 115,
-    team: 'DET',
+    team: 'FA',
     teamId: 8,
     conference: 'East',
     division: 'Cen.',
@@ -1492,12 +1492,12 @@ export default [
     position: 'SF',
     jersey: 31,
     height: 1.98,
-    teams: 'CLE.BKN',
+    teams: 'CLE.BKN.DET',
   },
   {
     player: 'Killian Hayes',
     playerId: 116,
-    team: 'DET',
+    team: 'FA',
     teamId: 8,
     conference: 'East',
     division: 'Cen.',
@@ -1505,7 +1505,7 @@ export default [
     position: 'PG',
     jersey: 7,
     height: 1.96,
-    teams: '',
+    teams: 'DET',
   },
   {
     player: 'Jaden Ivey',
@@ -1523,7 +1523,7 @@ export default [
   {
     player: 'Kevin Knox II',
     playerId: 118,
-    team: 'DET',
+    team: 'UTA',
     teamId: 8,
     conference: 'East',
     division: 'Cen.',
@@ -1531,12 +1531,12 @@ export default [
     position: 'SF',
     jersey: 24,
     height: 2.01,
-    teams: 'NYK.ATL.POR',
+    teams: 'NYK.ATL.POR.DET',
   },
   {
     player: 'Monte Morris',
     playerId: 119,
-    team: 'DET',
+    team: 'MIN',
     teamId: 8,
     conference: 'East',
     division: 'Cen.',
@@ -1544,7 +1544,7 @@ export default [
     position: 'PG',
     jersey: 5,
     height: 1.88,
-    teams: 'DEN.WAS',
+    teams: 'DEN.WAS.DET',
   },
   {
     player: 'Mike Muscala',
@@ -1627,7 +1627,7 @@ export default [
   {
     player: 'Buddy Hield',
     playerId: 126,
-    team: 'IND',
+    team: 'PHI',
     teamId: 9,
     conference: 'East',
     division: 'Cen.',
@@ -1635,7 +1635,7 @@ export default [
     position: 'SG',
     jersey: 7,
     height: 1.93,
-    teams: 'NOP.SAC',
+    teams: 'NOP.SAC.IND',
   },
   {
     player: 'Isaiah Jackson',
@@ -1926,7 +1926,7 @@ export default [
   {
     player: 'Robin Lopez',
     playerId: 149,
-    team: 'MIL',
+    team: 'FA',
     teamId: 10,
     conference: 'East',
     division: 'Cen.',
@@ -1934,7 +1934,7 @@ export default [
     position: 'C',
     jersey: 42,
     height: 2.16,
-    teams: 'PHO.NOP.POR.NYK.CHI.WAS.ORL.CLE',
+    teams: 'PHO.NOP.POR.NYK.CHI.WAS.ORL.CLE.MIL',
   },
   {
     player: 'Khris Middleton',
@@ -1952,7 +1952,7 @@ export default [
   {
     player: 'Cameron Payne',
     playerId: 151,
-    team: 'MIL',
+    team: 'PHI',
     teamId: 10,
     conference: 'East',
     division: 'Cen.',
@@ -1960,7 +1960,7 @@ export default [
     position: 'PG',
     jersey: 15,
     height: 1.91,
-    teams: 'OKC.CHI.CLE.PHO',
+    teams: 'OKC.CHI.CLE.PHO.MIL',
   },
   {
     player: 'Bobby Portis',
@@ -2238,7 +2238,7 @@ export default [
   {
     player: 'Gordon Hayward',
     playerId: 173,
-    team: 'CHA',
+    team: 'OKC',
     teamId: 12,
     conference: 'East',
     division: 'S-E',
@@ -2246,7 +2246,7 @@ export default [
     position: 'SF',
     jersey: 20,
     height: 2.01,
-    teams: 'UTA.BOS',
+    teams: 'UTA.BOS.CHA',
   },
   {
     player: 'Kyle Lowry',
@@ -2316,7 +2316,7 @@ export default [
   {
     player: 'Frank Ntilikina',
     playerId: 179,
-    team: 'CHA',
+    team: 'FA',
     teamId: 12,
     conference: 'East',
     division: 'S-E',
@@ -2324,7 +2324,7 @@ export default [
     position: 'PG',
     jersey: 44,
     height: 1.93,
-    teams: 'NYK.DAL',
+    teams: 'NYK.DAL.CHA',
   },
   {
     player: 'Nick Richards',
@@ -2381,7 +2381,7 @@ export default [
   {
     player: 'PJ Washington',
     playerId: 184,
-    team: 'CHA',
+    team: 'DAL',
     teamId: 12,
     conference: 'East',
     division: 'S-E',
@@ -2389,7 +2389,7 @@ export default [
     position: 'PF',
     jersey: 25,
     height: 2.01,
-    teams: '',
+    teams: 'CHA',
   },
   {
     player: 'Mark Williams',
@@ -2914,7 +2914,7 @@ export default [
   {
     player: 'Daniel Gafford',
     playerId: 224,
-    team: 'WAS',
+    team: 'DAL',
     teamId: 15,
     conference: 'East',
     division: 'S-E',
@@ -2922,7 +2922,7 @@ export default [
     position: 'C',
     jersey: 21,
     height: 2.08,
-    teams: 'CHI',
+    teams: 'CHI.WAS',
   },
   {
     player: 'Anthony Gill',
@@ -3291,7 +3291,7 @@ export default [
   {
     player: 'Troy Brown Jr',
     playerId: 253,
-    team: 'MIN',
+    team: 'DET',
     teamId: 17,
     conference: 'West',
     division: 'N-W',
@@ -3299,7 +3299,7 @@ export default [
     position: 'SF',
     jersey: 23,
     height: 2.01,
-    teams: 'WAS.CHI.LAL',
+    teams: 'WAS.CHI.LAL.MIN',
   },
   {
     player: 'Mike Conley',
@@ -3395,7 +3395,7 @@ export default [
   {
     player: 'Shake Milton',
     playerId: 261,
-    team: 'MIN',
+    team: 'DET',
     teamId: 17,
     conference: 'West',
     division: 'N-W',
@@ -3403,7 +3403,7 @@ export default [
     position: 'SG',
     jersey: 18,
     height: 1.96,
-    teams: 'PHI',
+    teams: 'PHI.MIN',
   },
   {
     player: 'Josh Minott',
@@ -3473,7 +3473,7 @@ export default [
   {
     player: 'Davis Bertans',
     playerId: 267,
-    team: 'OKC',
+    team: 'UTA',
     teamId: 18,
     conference: 'West',
     division: 'N-W',
@@ -3481,7 +3481,7 @@ export default [
     position: 'SF',
     jersey: 9,
     height: 2.08,
-    teams: 'SAS.WAS.DAL',
+    teams: 'SAS.WAS.DAL.OKC',
   },
   {
     player: 'Ousmane Dieng',
@@ -3564,7 +3564,7 @@ export default [
   {
     player: 'Tre Mann',
     playerId: 274,
-    team: 'OKC',
+    team: 'CHA',
     teamId: 18,
     conference: 'West',
     division: 'N-W',
@@ -3572,12 +3572,12 @@ export default [
     position: 'PG',
     jersey: 23,
     height: 1.91,
-    teams: '',
+    teams: 'OKC',
   },
   {
     player: 'Vasilije Micic',
     playerId: 275,
-    team: 'OKC',
+    team: 'CHA',
     teamId: 18,
     conference: 'West',
     division: 'N-W',
@@ -3585,7 +3585,7 @@ export default [
     position: 'G',
     jersey: 29,
     height: 1.91,
-    teams: '',
+    teams: 'OKC',
   },
   {
     player: 'Aleksej Pokusevski',
@@ -3889,7 +3889,7 @@ export default [
   {
     player: 'Ochai Agbaji',
     playerId: 299,
-    team: 'UTA',
+    team: 'TOR',
     teamId: 20,
     conference: 'West',
     division: 'N-W',
@@ -3897,7 +3897,7 @@ export default [
     position: 'G',
     jersey: 30,
     height: 1.96,
-    teams: '',
+    teams: 'UTA',
   },
   {
     player: 'Jordan Clarkson',
@@ -3941,7 +3941,7 @@ export default [
   {
     player: 'Simone Fontecchio',
     playerId: 303,
-    team: 'UTA',
+    team: 'DET',
     teamId: 20,
     conference: 'West',
     division: 'N-W',
@@ -3949,7 +3949,7 @@ export default [
     position: 'F',
     jersey: 16,
     height: 2.01,
-    teams: '',
+    teams: 'UTA',
   },
   {
     player: 'Keyonte George',
@@ -4006,7 +4006,7 @@ export default [
   {
     player: 'Kelly Olynyk',
     playerId: 308,
-    team: 'UTA',
+    team: 'TOR',
     teamId: 20,
     conference: 'West',
     division: 'N-W',
@@ -4014,7 +4014,7 @@ export default [
     position: 'PF',
     jersey: 41,
     height: 2.11,
-    teams: 'BOS.MIA.HOU.DET',
+    teams: 'BOS.MIA.HOU.DET.UTA',
   },
   {
     player: 'Luka Samanic',
@@ -4110,7 +4110,7 @@ export default [
   {
     player: 'Corey Joseph',
     playerId: 316,
-    team: 'GSW',
+    team: 'FA',
     teamId: 21,
     conference: 'West',
     division: 'Pac.',
@@ -4118,7 +4118,7 @@ export default [
     position: 'PG',
     jersey: 1,
     height: 1.88,
-    teams: 'SAS.TOR.IND.SAC.DET',
+    teams: 'SAS.TOR.IND.SAC.DET.GSW',
   },
   {
     player: 'Jonathan Kuminga',
@@ -5098,7 +5098,7 @@ export default [
   {
     player: 'Seth Curry',
     playerId: 392,
-    team: 'DAL',
+    team: 'CHA',
     teamId: 26,
     conference: 'West',
     division: 'S-W.',
@@ -5106,7 +5106,7 @@ export default [
     position: 'SG',
     jersey: 30,
     height: 1.85,
-    teams: 'CLE.MEM.PHO.SAC.POR.PHI.BKN',
+    teams: 'CLE.MEM.PHO.SAC.POR.PHI.BKN.DAL',
   },
   {
     player: 'Luka Doncic',
@@ -5176,7 +5176,7 @@ export default [
   {
     player: 'Richaun Holmes',
     playerId: 398,
-    team: 'DAL',
+    team: 'WAS',
     teamId: 26,
     conference: 'West',
     division: 'S-W.',
@@ -5184,7 +5184,7 @@ export default [
     position: 'F',
     jersey: 20,
     height: 2.06,
-    teams: 'PHI.PHO.SAC',
+    teams: 'PHI.PHO.SAC.DAL',
   },
   {
     player: 'Kyrie Irving',
@@ -5306,7 +5306,7 @@ export default [
   {
     player: 'Grant Williams',
     playerId: 408,
-    team: 'DAL',
+    team: 'CHA',
     teamId: 26,
     conference: 'West',
     division: 'S-W.',
@@ -5314,7 +5314,7 @@ export default [
     position: 'PF',
     jersey: 3,
     height: 1.98,
-    teams: 'BOS',
+    teams: 'BOS.DAL',
   },
   {
     player: 'Dillon Brooks',
@@ -5423,7 +5423,7 @@ export default [
   {
     player: 'Victor Oladipo',
     playerId: 417,
-    team: 'MEM',
+    team: 'FA',
     teamId: 27,
     conference: 'West',
     division: 'S-W.',
@@ -5431,7 +5431,7 @@ export default [
     position: 'SG',
     jersey: 3,
     height: 1.91,
-    teams: 'ORL.OKC.IND.MIA.HOU',
+    teams: 'ORL.OKC.IND.MIA.HOU.MEM',
   },
   {
     player: 'Alperen Sengun',
@@ -5670,7 +5670,7 @@ export default [
   {
     player: 'David Roddy',
     playerId: 436,
-    team: 'MEM',
+    team: 'PHO',
     teamId: 28,
     conference: 'West',
     division: 'S-W.',
@@ -5678,7 +5678,7 @@ export default [
     position: 'F',
     jersey: 21,
     height: 1.93,
-    teams: '',
+    teams: 'MEM',
   },
   {
     player: 'Derrick Rose',
@@ -5709,7 +5709,7 @@ export default [
   {
     player: 'Xavier Tillman',
     playerId: 439,
-    team: 'MEM',
+    team: 'BOS',
     teamId: 28,
     conference: 'West',
     division: 'S-W.',
@@ -5717,7 +5717,7 @@ export default [
     position: 'F',
     jersey: 2,
     height: 2.01,
-    teams: '',
+    teams: 'MEM',
   },
   {
     player: 'Ziaire Williams',
@@ -6086,7 +6086,7 @@ export default [
   {
     player: 'Doug McDermott',
     playerId: 468,
-    team: 'SAS',
+    team: 'IND',
     teamId: 30,
     conference: 'West',
     division: 'S-W.',
@@ -6094,7 +6094,7 @@ export default [
     position: 'SF',
     jersey: 17,
     height: 1.98,
-    teams: 'CHI.OKC.DAL.NYK.IND',
+    teams: 'CHI.OKC.DAL.NYK.IND.SAS',
   },
   {
     player: 'Cedi Osman',

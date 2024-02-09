@@ -36,6 +36,11 @@ function Modal() {
               La couleur jaune dans les colonnes taille, âge, numéro indiquent
               que le joueur est proche de ces chiffres
             </p>
+            <br />
+            <p>
+              Un joueur avec FA dans son équipe est un joueur sans club (Free
+              Agent)
+            </p>
           </div>
         </div>
       )}
