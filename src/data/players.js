@@ -2251,10 +2251,10 @@ export default [
   {
     player: 'Kyle Lowry',
     playerId: 174,
-    team: 'CHA',
-    teamId: 12,
+    team: 'PHI',
+    teamId: 4,
     conference: 'East',
-    division: 'S-E',
+    division: 'Atl.',
     age: 37,
     position: 'PG',
     jersey: 7,
