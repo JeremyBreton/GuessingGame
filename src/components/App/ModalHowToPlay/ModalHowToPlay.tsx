@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './ModalHowToPlay.scss';
 import {
   openHowToPlayModal,
@@ -13,6 +13,16 @@ function Modal() {
     (state) => state.form.modalHowToPlayOpen
   );
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (modalHowToPlayOpen) {
+      setIsOpen(true);
+    } else {
+      setIsOpen(false);
+    }
+  }, [modalHowToPlayOpen]);
+
   const toggleHowToPlayModal = () => {
     dispatch(openHowToPlayModal()); // Utilisez l'action pour ouvrir la modal
   };
@@ -21,7 +31,7 @@ function Modal() {
     <>
       {modalHowToPlayOpen && (
         <div className="modal-overlay-HTP" onClick={toggleHowToPlayModal}>
-          <div className="modal-content-HTP">
+          <div className={`modal-content-HTP ${isOpen ? 'open' : ''}`}>
             <h2>Comment jouer ?</h2>
             <p>Vous avez 8 tentatives pour trouver le joueur mystère !</p>
             <br />
