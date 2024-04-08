@@ -3,7 +3,9 @@ import './Footer.scss';
 function Footer() {
   return (
     <div className="footer-container">
-      <p>Créer par Jérémy Breton</p>
+      <a href="https://portfolio-jeremy-breton.netlify.app/" target="blank">
+        <p>Crée par Jérémy Breton</p>
+      </a>
       <a href="https://github.com/JeremyBreton" target="blank">
         <img src="/github.png" alt="" srcset="" />
       </a>
