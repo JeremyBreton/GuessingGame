@@ -25,8 +25,8 @@
   flex-direction: column;
   justify-content: center;
   opacity: 0;
-  transform: translateY(-50px);
-  transition: opacity 0.5s ease-in, transform 0.5s ease-in; // Transition pour l'opacité et la transformation
+  transform: translateY(-30px);
+  transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out; // Transition pour l'opacité et la transformation
 
   &.open {
     opacity: 1;
