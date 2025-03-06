@@ -1,4 +1,5 @@
 @use '../../../styles/variables' as v;
+@use 'sass:math';
 
 .listPlayers-container {
   border: 2px solid blue;
@@ -8,7 +9,7 @@
   display: flex;
   flex-wrap: wrap;
   background: v.$color-bg-dark;
-  border-radius: v.$gutter/2;
+  border-radius: math.div(v.$gutter, 2);
   padding: v.$gutter;
   overflow-y: scroll;
 
@@ -16,7 +17,7 @@
     width: 15%;
     margin: v.$gutter auto;
     background: v.$color-bg-light;
-    border-radius: v.$gutter/2;
+    border-radius: math.div(v.$gutter, 2);
     padding: v.$gutter;
   }
 }
